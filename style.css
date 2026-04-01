@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f1115;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1d24, #0f1115);
+  border-bottom: 1px solid #222;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.tier-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.tier-row {
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1d24;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.tier-label {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.tier-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+}
+
+.tier-content img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.tier-content img:hover {
+  transform: scale(1.1);
+}
+
+/* Tier colors */
+.ss .tier-label { background: #ff4d4d; }
+.s .tier-label { background: #ff944d; }
+.a .tier-label { background: #ffd24d; }
+.b .tier-label { background: #c2e07f; }
+.c .tier-label { background: #7fd1ff; }
+.d .tier-label { background: #a0a0a0; }

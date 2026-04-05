@@ -198,6 +198,34 @@
       padding-top: 18px;
     }
 
+    /* ナビゲーション */
+    .site-nav {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
     @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -219,6 +247,11 @@
   </style>
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="index.html" class="active">ヒーロー Tier List</a>
+    <a href="patch-notes.html">パッチノート翻訳</a>
+  </nav>
+
   <header class="hero">
     <div class="container hero-grid">
       <div>
@@ -259,7 +292,7 @@
 
         <div class="cards">
           <article class="card">
-            
+            <p>Last updated: April 2026</p>
           </article>
         </div>
       </div>

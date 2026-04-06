@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deadlock Hero Tier List | 日本語ファンサイト</title>
-  <meta name="description" content="Deadlockのヒーロー評価ランキング（Tier List）と最新パッチノートの日本語翻訳を掲載しています。" />
+  <title>Deadlockers | Deadlock 日本語ファンサイト</title>
+  <meta name="description" content="Deadlockのヒーロー情報・Tier List・パッチノート日本語翻訳を提供する非公式ファンサイト" />
   <link rel="canonical" href="https://main.doj0zmgee527y.amplifyapp.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://main.doj0zmgee527y.amplifyapp.com/" />
@@ -46,165 +46,6 @@
       margin: 0 auto;
     }
 
-    .hero {
-      padding: 72px 0 30px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
-      font-size: 0.88rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
-
-    .lead {
-      margin: 0 0 26px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 60ch;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .meta-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-      min-width: 150px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    .meta-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 2px;
-    }
-
-    .meta-card span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .hero-panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .section {
-      padding: 18px 0 60px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      letter-spacing: -0.02em;
-    }
-
-    .section-title p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 54ch;
-      text-align: right;
-    }
-
-    .image-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .image-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #000;
-    }
-
-    .image-caption {
-      padding: 16px 18px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      border-top: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .cards {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    footer {
-      padding: 10px 0 42px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .footer-box {
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
-
     /* ナビゲーション */
     .site-nav {
       background: rgba(255,255,255,0.04);
@@ -233,74 +74,180 @@
       border-bottom-color: var(--accent);
     }
 
-    @media (max-width: 900px) {
-      .hero-grid {
+    /* ヒーローヘッダー */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .lead {
+      margin: 0 auto 40px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 52ch;
+    }
+
+    /* フィーチャーカード */
+    .section {
+      padding: 0 0 80px;
+    }
+
+    .section-heading {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      letter-spacing: -0.02em;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2rem 1.8rem;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      transition: transform .2s, border-color .2s, background .2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      background: rgba(255,255,255,0.09);
+    }
+
+    .feature-card-icon {
+      font-size: 2.6rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .feature-card-body {
+      flex: 1;
+    }
+
+    .feature-card-body h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .feature-card-arrow {
+      margin-left: auto;
+      font-size: 1.4rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+
+    .feature-card:hover .feature-card-arrow {
+      transform: translateX(5px);
+    }
+
+    /* フッター */
+    footer {
+      padding: 10px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 640px) {
+      .feature-cards {
         grid-template-columns: 1fr;
       }
 
-      .section-title {
-        display: block;
-      }
-
-      .section-title p {
-        text-align: left;
-        margin-top: 8px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
+      .hero {
+        padding: 60px 0 40px;
       }
     }
   </style>
 </head>
 <body>
   <nav class="site-nav">
-    <a href="index.html" class="active">ヒーロー Tier List</a>
+    <a href="index.html" class="active">ホーム</a>
+    <a href="tier-list.html">ヒーロー Tier List</a>
     <a href="patch-notes.html">パッチノート翻訳</a>
   </nav>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Deadlock Fan Site / Hero Tier List</div>
-        <h1>Deadlock<br>Hero Tier List</h1>
-        <p class="lead">
-          まずはヒーローティアリストをメインコンテンツとして公開するための、
-          シンプルで見やすい1ページ構成にしました。あとからビルド解説、
-          パッチノート、初心者向けガイドを追加していきます。
-        </p>
-        
-      </div>
-      <div class="hero-panel">
-        <div style="color: var(--muted); font-size: 0.95rem; margin-bottom: 8px;">Featured</div>
-        <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">最新ヒーロー評価</div>
-        <div style="color: var(--muted);">
-          ヒーローの勝率データから作りました。
-        </div>
-      </div>
+    <div class="container">
+      <div class="eyebrow">非公式ファンサイト / Unofficial Fan Site</div>
+      <h1>Dead<span>lockers</span></h1>
+      <p class="lead">
+        Deadlockのヒーロー情報・Tier List・パッチノート日本語翻訳を提供するファンサイトです。
+      </p>
     </div>
   </header>
 
   <main>
     <section class="section">
       <div class="container">
-        <div class="section-title">
-          <h2>Hero Tier List</h2>
-          <p>作成時期: 3月21日パッチ
-          </p>
-        </div>
+        <p class="section-heading">コンテンツ</p>
+        <div class="feature-cards">
 
-        <div class="image-card">
-          <img src="./img/my-image.png">
-          <div class="image-caption">
-            全ランク帯での勝率です。画質悪くてすみません。今後改善していく予定です。
-          </div>
-        </div>
+          <a class="feature-card" href="tier-list.html">
+            <div class="feature-card-icon">📊</div>
+            <div class="feature-card-body">
+              <h3>ヒーロー Tier List</h3>
+              <p>最新パッチに基づくヒーロー評価ランキング</p>
+            </div>
+            <span class="feature-card-arrow">→</span>
+          </a>
 
-        <div class="cards">
-          <article class="card">
-            <p>Last updated: April 2026</p>
-          </article>
+          <a class="feature-card" href="patch-notes.html">
+            <div class="feature-card-icon">📋</div>
+            <div class="feature-card-body">
+              <h3>パッチノート翻訳</h3>
+              <p>最新パッチの変更内容を日本語で解説</p>
+            </div>
+            <span class="feature-card-arrow">→</span>
+          </a>
+
         </div>
       </div>
     </section>
@@ -308,6 +255,7 @@
 
   <footer>
     <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
     </div>
   </footer>
 </body>

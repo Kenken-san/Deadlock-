@@ -1,0 +1,154 @@
+{
+  "date": "2026-04-10",
+  "label": "4月10日パッチ",
+  "heroes": [
+    {
+      "name": "Bebop",
+      "changes": [
+        "武器のウィンドアップ時間: 0.5s → 0.3s に短縮、高速ウィンドアップ: 0.1s → 0.05s に短縮",
+        "Sticky Bomb が自分自身にも使用可能に（自己ダメージ20%）",
+        "Sticky Bomb 範囲: 10m → 8m に減少",
+        "Grapple Arm が軽近接ダメージ（0.7倍スケール）を付与するように"
+      ]
+    },
+    {
+      "name": "Billy",
+      "changes": [
+        "Bashdown T3 チャージ時間短縮: -2s → -3s に増加",
+        "Rising Ram T3 ダメージ: 8% → 10% に増加"
+      ]
+    },
+    {
+      "name": "Celeste",
+      "changes": [
+        "ベース体力: 790 → 700 に減少、ボーン毎の体力: 47 → 45 に減少",
+        "弾丸耐性のマイナス補正を削除",
+        "弾ダメージを再調整（DPS約8%減少）",
+        "Light Eater の初期衝撃・弾ヒットダメージを再調整",
+        "Light Eater のデバフ持続時間を短縮、スピリットスケールを追加",
+        "Dazzling Trick のバリア量を減少",
+        "Radiant Daggers T3 射撃速度: +7% → +9% に増加",
+        "Shining Wonder のダメージを増加"
+      ]
+    },
+    {
+      "name": "Doorman",
+      "changes": [
+        "Doorway がミニマップに視線内の敵に対して設置位置を表示するように",
+        "Luggage Cart のコリジョンを10%縮小",
+        "Luggage Cart のスタンがイモビライズに変更"
+      ]
+    },
+    {
+      "name": "Dynamo",
+      "changes": [
+        "Quantum Entanglement クールダウン: 16s → 19s に増加"
+      ]
+    },
+    {
+      "name": "Grey Talon",
+      "changes": [
+        "ボーン毎のスピリット: 1.1 → 1.6 に増加",
+        "Charged Shot チャネル中の移動速度: 1.3m → 1.5m に増加",
+        "Guided Owl のスピードと持続時間を調整"
+      ]
+    },
+    {
+      "name": "Haze",
+      "changes": [
+        "Sleep Dagger がRMBズームを解除しなくなった、スピリットスケールを増加",
+        "Sleep Dagger T2 クールダウン短縮: -17s に増加",
+        "Sleep Dagger T3 スリープと鈍足の持続時間を増加",
+        "Smoke Bomb のスピリットスケールとT3ライフスティールを増加",
+        "Fixation のスタック毎ダメージを調整",
+        "Bullet Dance のターゲット範囲がコーン状に変更、クールダウン: 145s に減少",
+        "Bullet Dance の基本回避を削除し、T3アップグレードに移動"
+      ]
+    },
+    {
+      "name": "Holliday",
+      "changes": [
+        "銃のフィール・挙動を各種改善"
+      ]
+    },
+    {
+      "name": "Kelvin",
+      "changes": [
+        "Frost Grenade の回復スピリットスケールを減少"
+      ]
+    },
+    {
+      "name": "Lady Geist",
+      "changes": [
+        "弾ダメージを再調整",
+        "Soul Exchange クールダウン: 185s → 190s に増加"
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "changes": [
+        "弾ダメージを増加",
+        "Spectral Wall 持続時間: 6s に増加、壁セグメント数: 8 に増加"
+      ]
+    },
+    {
+      "name": "Mirage",
+      "changes": [
+        "Fire Scarabs のHP吸収を減少",
+        "Djinn's Mark のスピリットスケールを減少"
+      ]
+    },
+    {
+      "name": "Paradox",
+      "changes": [
+        "弾ダメージを増加",
+        "Time Wall のサイズを拡大",
+        "Kinetic Carbine のコリジョン半径を増加"
+      ]
+    },
+    {
+      "name": "Rem",
+      "changes": [
+        "壊し物オブジェクトでソウルが正しく獲得されないバグを修正",
+        "Tag Along のキャスト遅延中にキャンセル不可に",
+        "Naptime 範囲: 19m に増加、T2 スリープ持続時間を増加"
+      ]
+    },
+    {
+      "name": "Shiv",
+      "changes": [
+        "バリアに対してRageが蓄積されないバグを修正"
+      ]
+    },
+    {
+      "name": "Venator",
+      "changes": [
+        "Hex-Lined Snap Trap イモビライズ持続時間: 1.25s に減少",
+        "クールダウン: 28s に増加、T1・T2アップグレードの効果を改善"
+      ]
+    },
+    {
+      "name": "Victor",
+      "changes": [
+        "弾ダメージ: 12 → 13 に増加",
+        "Jumpstart T2 HP回復量: +70 に増加",
+        "Aura of Suffering のスタック蓄積時間を延長、鈍足を調整しDPSを増加",
+        "Shocking Reanimation が死亡時に強力な重鈍足（ディミニッシングあり）を付与するように"
+      ]
+    },
+    {
+      "name": "Vyper",
+      "changes": [
+        "Screwjab Dagger がRMBズームを解除しなくなった、チャージ時間: 4.0s に減少",
+        "坂道を上りながらのスライド中に横移動が可能に",
+        "Slither スライド距離ボーナス: +15% に増加"
+      ]
+    },
+    {
+      "name": "Yamato",
+      "changes": [
+        "Crimson Slash がベールを貫通してヒットしないバグを修正"
+      ]
+    }
+  ]
+}

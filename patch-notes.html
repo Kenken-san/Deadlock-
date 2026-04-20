@@ -173,6 +173,32 @@
       color: var(--accent);
     }
 
+    /* 過去パッチ 日付タブ */
+    .patch-date-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .patch-tab-btn {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+      font-family: inherit;
+    }
+
+    .patch-tab-btn:hover,
+    .patch-tab-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     /* フッター */
     footer {
       padding: 10px 0 42px;
@@ -194,7 +220,6 @@
         text-align: left;
         margin-top: 8px;
       }
-
     }
   </style>
 </head>
@@ -217,151 +242,26 @@
   </header>
 
   <main>
+    <!-- 最新パッチ（常に表示） -->
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>3月25日パッチ</h2>
+          <h2 id="latest-patch-title">最新パッチ</h2>
         </div>
-
-        <div class="patch-list">
-
-          <div class="patch-entry">
-            <h3>Bebop</h3>
-            <ul>
-              <li>ベース体力回復: 1.5 → 2.5 に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Calico</h3>
-            <ul>
-              <li>Leaping Slash ベースダメージ: 50 → 60 に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Celeste</h3>
-            <ul>
-              <li>ベース体力回復: 2 → 1 に減少</li>
-              <li>Dazzling Trick T3 沈黙持続時間: +2s → +1.5s に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Doorman</h3>
-            <ul>
-              <li>Call Bell スロー効果: 30% → 35% に増加</li>
-              <li>Call Bell 範囲: 5m → 6m に増加</li>
-              <li>Doorway 距離: 60m → 70m に増加</li>
-              <li>Luggage Cart T2 壁ヒット時に 75 ボーナスダメージ（スピリット0.6倍スケール）を追加</li>
-              <li>Luggage Cart T3 スタン持続時間: 1.5s → 1.25s に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Graves</h3>
-            <ul>
-              <li>Grasping Hands スピリットダメージスケール: 1.9 → 1.6 に減少</li>
-              <li>Grasping Hands T3 召喚ゴール数: 2体 → 1体 に減少</li>
-              <li>Grasping Hands T3 クールダウンを10s短縮する効果を追加</li>
-              <li>Borrowed Decree ゴールHP: 200+12/boon → 180+8/boon に減少</li>
-              <li>Borrowed Decree ゴールダメージ: 150 → 135 に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Holliday</h3>
-            <ul>
-              <li>Bounce Pad が味方に空中制御とストンプダメージを付与するように</li>
-              <li>Crackshot T3 クールダウン短縮: ヒーロー-4s/NPC-2s → ヒーロー-6s/NPC-3s に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Infernus</h3>
-            <ul>
-              <li>Afterburn DPS: 12 → 14 に増加</li>
-              <li>Afterburn T1 DPS: +14 → +16 に増加</li>
-              <li>Concussive Combustion T2 爆発ライフスティール: +85% → +100% に増加</li>
-              <li>Concussive Combustion T2 クールダウン短縮: -65s → -75s に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Kelvin</h3>
-            <ul>
-              <li>Frost Grenade ダメージスピリットスケール: 0.8 → 0.7 に減少</li>
-              <li>Frost Grenade T3 ダメージスピリットスケール: 0.9 → 0.8 に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Lady Geist</h3>
-            <ul>
-              <li>弾ダメージ落下開始・終了距離: 20→52m → 17→48m に短縮</li>
-              <li>Life Drain スピリットスケール: 0.536 → 0.43 に減少</li>
-              <li>Life Drain T3 スピリットスケールボーナス: +0.3 → +0.4 に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>McGinnis</h3>
-            <ul>
-              <li>Medicinal Specter T3 持続時間ボーナス: +1s → +1.5s に増加</li>
-              <li>Spectral Wall 持続時間: 5s → 5.5s に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Mirage</h3>
-            <ul>
-              <li>Fire Scarabs 毎秒HP吸収: 10 → 9 に減少</li>
-              <li>Fire Scarabs T1 毎秒HP吸収ボーナス: +8 → +7 に減少</li>
-              <li>Fire Scarabs T3 スピリットスケール: +0.23 → +0.17 に減少</li>
-              <li>Dust Devil クールダウン: 32s → 36s に増加</li>
-              <li>Dust Devil T2 クールダウン短縮: -8s → -12s に増加</li>
-              <li>Dust Devil T3 浮遊持続時間を0.3s延長する効果を追加</li>
-              <li>Djinn's Mark スピリットスケール: 0.44 → 0.38 に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Rem</h3>
-            <ul>
-              <li>Naptime T3 チャネル中に無敵状態（Unstoppable）を付与するように</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Silver</h3>
-            <ul>
-              <li>弾ダメージ: 5.5+0.1206スケール → 5.4+0.124スケール に変更</li>
-              <li>Slam Fire クールダウン: 22s → 25s に増加</li>
-              <li>Slam Fire T2 クールダウン短縮: -7s → -10s に増加</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Venator</h3>
-            <ul>
-              <li>Consecrating Grenade 着弾ダメージスケール: 1.2 → 1.0 に減少</li>
-              <li>Gut Shot 壁スタン: 0.65s → 0.6s に減少</li>
-              <li>Gut Shot ダメージスケール: 1.0 → 0.8 に減少</li>
-            </ul>
-          </div>
-
-          <div class="patch-entry">
-            <h3>Victor</h3>
-            <ul>
-              <li>ボーン毎の回復HPを 46 に戻す</li>
-              <li>ライフスティール効果-30%のデバフを削除</li>
-              <li>Jumpstart T3 がウルト以外のデバフをパージしなくなった</li>
-              <li>Jumpstart T3 にデバフ耐性+50%・既存デバフ持続時間50%短縮の効果を追加</li>
-              <li>Aura of Suffering 範囲: 9.5m → 9m に減少</li>
-            </ul>
-          </div>
-
+        <div id="latest-patch-list" class="patch-list">
+          <div class="patch-entry" style="color:var(--muted)">読み込み中...</div>
         </div>
+      </div>
+    </section>
+
+    <!-- 過去のパッチ（2件以上あるときのみ表示） -->
+    <section class="section" id="archive-section" style="display:none; padding-top:0;">
+      <div class="container">
+        <div class="section-title">
+          <h2>過去のパッチノート</h2>
+        </div>
+        <div class="patch-date-tabs" id="patch-tabs"></div>
+        <div id="archive-patch-list" class="patch-list"></div>
       </div>
     </section>
   </main>
@@ -371,5 +271,70 @@
       非公式ファンサイト。DeadlockはValve Corporationの商標です。
     </div>
   </footer>
+
+  <script>
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function renderPatch(data) {
+      return data.heroes.map(hero => `
+        <div class="patch-entry">
+          <h3>${escHtml(hero.name)}</h3>
+          <ul>
+            ${hero.changes.map(c => `<li>${escHtml(c)}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+    }
+
+    async function loadPatch(date) {
+      const res = await fetch(`./data/patches/${date}.json`);
+      return res.json();
+    }
+
+    async function init() {
+      const indexRes = await fetch('./data/patches/index.json');
+      const dates = await indexRes.json();
+
+      // 最新パッチを表示
+      const latest = await loadPatch(dates[0]);
+      document.getElementById('latest-patch-title').textContent = latest.label;
+      document.getElementById('latest-patch-list').innerHTML = renderPatch(latest);
+
+      // 過去パッチ（2件目以降）
+      const archiveDates = dates.slice(1);
+      if (archiveDates.length === 0) return;
+
+      document.getElementById('archive-section').style.display = '';
+
+      const tabsEl = document.getElementById('patch-tabs');
+      const listEl = document.getElementById('archive-patch-list');
+
+      async function showArchive(date, btn) {
+        document.querySelectorAll('.patch-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        listEl.innerHTML = '<div class="patch-entry" style="color:var(--muted)">読み込み中...</div>';
+        const data = await loadPatch(date);
+        listEl.innerHTML = renderPatch(data);
+      }
+
+      archiveDates.forEach((date, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'patch-tab-btn';
+        // YYYY-MM-DD → M月D日 表示
+        const [, m, d] = date.split('-');
+        btn.textContent = `${parseInt(m)}月${parseInt(d)}日パッチ`;
+        btn.addEventListener('click', () => showArchive(date, btn));
+        tabsEl.appendChild(btn);
+        if (i === 0) showArchive(date, btn);
+      });
+    }
+
+    init();
+  </script>
 </body>
 </html>

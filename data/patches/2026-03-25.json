@@ -1,0 +1,121 @@
+{
+  "date": "2026-03-25",
+  "label": "3月25日パッチ",
+  "heroes": [
+    {
+      "name": "Bebop",
+      "changes": ["ベース体力回復: 1.5 → 2.5 に増加"]
+    },
+    {
+      "name": "Calico",
+      "changes": ["Leaping Slash ベースダメージ: 50 → 60 に増加"]
+    },
+    {
+      "name": "Celeste",
+      "changes": [
+        "ベース体力回復: 2 → 1 に減少",
+        "Dazzling Trick T3 沈黙持続時間: +2s → +1.5s に減少"
+      ]
+    },
+    {
+      "name": "Doorman",
+      "changes": [
+        "Call Bell スロー効果: 30% → 35% に増加",
+        "Call Bell 範囲: 5m → 6m に増加",
+        "Doorway 距離: 60m → 70m に増加",
+        "Luggage Cart T2 壁ヒット時に 75 ボーナスダメージ（スピリット0.6倍スケール）を追加",
+        "Luggage Cart T3 スタン持続時間: 1.5s → 1.25s に減少"
+      ]
+    },
+    {
+      "name": "Graves",
+      "changes": [
+        "Grasping Hands スピリットダメージスケール: 1.9 → 1.6 に減少",
+        "Grasping Hands T3 召喚ゴール数: 2体 → 1体 に減少",
+        "Grasping Hands T3 クールダウンを10s短縮する効果を追加",
+        "Borrowed Decree ゴールHP: 200+12/boon → 180+8/boon に減少",
+        "Borrowed Decree ゴールダメージ: 150 → 135 に減少"
+      ]
+    },
+    {
+      "name": "Holliday",
+      "changes": [
+        "Bounce Pad が味方に空中制御とストンプダメージを付与するように",
+        "Crackshot T3 クールダウン短縮: ヒーロー-4s/NPC-2s → ヒーロー-6s/NPC-3s に増加"
+      ]
+    },
+    {
+      "name": "Infernus",
+      "changes": [
+        "Afterburn DPS: 12 → 14 に増加",
+        "Afterburn T1 DPS: +14 → +16 に増加",
+        "Concussive Combustion T2 爆発ライフスティール: +85% → +100% に増加",
+        "Concussive Combustion T2 クールダウン短縮: -65s → -75s に増加"
+      ]
+    },
+    {
+      "name": "Kelvin",
+      "changes": [
+        "Frost Grenade ダメージスピリットスケール: 0.8 → 0.7 に減少",
+        "Frost Grenade T3 ダメージスピリットスケール: 0.9 → 0.8 に減少"
+      ]
+    },
+    {
+      "name": "Lady Geist",
+      "changes": [
+        "弾ダメージ落下開始・終了距離: 20→52m → 17→48m に短縮",
+        "Life Drain スピリットスケール: 0.536 → 0.43 に減少",
+        "Life Drain T3 スピリットスケールボーナス: +0.3 → +0.4 に増加"
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "changes": [
+        "Medicinal Specter T3 持続時間ボーナス: +1s → +1.5s に増加",
+        "Spectral Wall 持続時間: 5s → 5.5s に増加"
+      ]
+    },
+    {
+      "name": "Mirage",
+      "changes": [
+        "Fire Scarabs 毎秒HP吸収: 10 → 9 に減少",
+        "Fire Scarabs T1 毎秒HP吸収ボーナス: +8 → +7 に減少",
+        "Fire Scarabs T3 スピリットスケール: +0.23 → +0.17 に減少",
+        "Dust Devil クールダウン: 32s → 36s に増加",
+        "Dust Devil T2 クールダウン短縮: -8s → -12s に増加",
+        "Dust Devil T3 浮遊持続時間を0.3s延長する効果を追加",
+        "Djinn's Mark スピリットスケール: 0.44 → 0.38 に減少"
+      ]
+    },
+    {
+      "name": "Rem",
+      "changes": ["Naptime T3 チャネル中に無敵状態（Unstoppable）を付与するように"]
+    },
+    {
+      "name": "Silver",
+      "changes": [
+        "弾ダメージ: 5.5+0.1206スケール → 5.4+0.124スケール に変更",
+        "Slam Fire クールダウン: 22s → 25s に増加",
+        "Slam Fire T2 クールダウン短縮: -7s → -10s に増加"
+      ]
+    },
+    {
+      "name": "Venator",
+      "changes": [
+        "Consecrating Grenade 着弾ダメージスケール: 1.2 → 1.0 に減少",
+        "Gut Shot 壁スタン: 0.65s → 0.6s に減少",
+        "Gut Shot ダメージスケール: 1.0 → 0.8 に減少"
+      ]
+    },
+    {
+      "name": "Victor",
+      "changes": [
+        "ボーン毎の回復HPを 46 に戻す",
+        "ライフスティール効果-30%のデバフを削除",
+        "Jumpstart T3 がウルト以外のデバフをパージしなくなった",
+        "Jumpstart T3 にデバフ耐性+50%・既存デバフ持続時間50%短縮の効果を追加",
+        "Aura of Suffering 範囲: 9.5m → 9m に減少"
+      ]
+    }
+  ]
+}

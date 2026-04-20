@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://main.doj0zmgee527y.amplifyapp.com/sitemap.xml
+Sitemap: https://deadklock-jp.com/sitemap.xml

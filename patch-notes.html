@@ -292,12 +292,12 @@
     }
 
     async function loadPatch(date) {
-      const res = await fetch(`./data/patches/${date}.json`);
+      const res = await fetch(`https://deadlock-patch-data.s3.ap-northeast-1.amazonaws.com/patches/${date}.json`);
       return res.json();
     }
 
     async function init() {
-      const indexRes = await fetch('./data/patches/index.json');
+      const indexRes = await fetch('https://deadlock-patch-data.s3.ap-northeast-1.amazonaws.com/patches/index.json');
       const dates = await indexRes.json();
 
       // 最新パッチを表示

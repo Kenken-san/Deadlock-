@@ -1,0 +1,180 @@
+{
+  "date": "2026-04-30",
+  "label": "4月30日パッチ",
+  "heroes": [
+    {
+      "name": "Abrams",
+      "changes": [
+        "Shoulder Charge をヒーローにヒットしてキャンセルした後の速度が高すぎる問題を修正"
+      ]
+    },
+    {
+      "name": "Apollo",
+      "changes": [
+        "Sigil 解除時のベースダメージ: 100 → 85 に減少"
+      ]
+    },
+    {
+      "name": "Billy",
+      "changes": [
+        "Rising Ram T3 がクールダウンを10秒短縮する効果も追加"
+      ]
+    },
+    {
+      "name": "Celeste",
+      "changes": [
+        "弾丸サイクルタイム: 0.65 → 0.58 に短縮",
+        "Shining Wonder 範囲: 14m → 15.5m に増加",
+        "Shining Wonder ダメージ: 120 → 135 に増加"
+      ]
+    },
+    {
+      "name": "Doorman",
+      "changes": [
+        "ドアウェイを通してUrnを持ち込めるバグを修正"
+      ]
+    },
+    {
+      "name": "Drifter",
+      "changes": [
+        "Rend T3 が近接スケール増加も追加（1.2 → 1.6）",
+        "Bloodscent T3 増幅ダメージ: +10% → +12% に増加"
+      ]
+    },
+    {
+      "name": "Dynamo",
+      "changes": [
+        "Kinetic Pulse スピリットスケール: 1.8 → 1.65 に減少",
+        "Quantum Entanglement クールダウン: 19秒 → 20秒 に増加"
+      ]
+    },
+    {
+      "name": "Haze",
+      "changes": [
+        "Bullet Dance 使用中のスライドを再び可能に",
+        "Bullet Dance 範囲: 15m → 16m に増加",
+        "Bullet Dance のベース能力に30%回避を追加",
+        "Bullet Dance T2: 「+10%射撃速度 / -45秒クールダウン」→「+10%射撃速度 / +3m移動速度」に変更",
+        "Bullet Dance T3: 「+60%回避 / +4m移動速度」→「+40%回避 / -75秒クールダウン」に変更"
+      ]
+    },
+    {
+      "name": "Holliday",
+      "changes": [
+        "Rising Ram が Lasso を中断するバグを修正",
+        "Spirit Lasso T1 ダメージ: +68 → +80 に増加",
+        "Spirit Lasso T3 クールダウン短縮: -30秒 → -50秒 に増加"
+      ]
+    },
+    {
+      "name": "Infernus",
+      "changes": [
+        "Flame Dash DPS スピリットスケール: 1.0 → 0.7 に減少",
+        "Flame Dash DPS がオブジェクトに対して半分のダメージになるように"
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "changes": [
+        "Mini Turrets バウンティ: 80+2/分 → 40+4/分 に変更",
+        "Mini Turrets が無敵状態のオブジェクトにロックオンするバグを修正",
+        "Medicinal Specter 持続時間: 6秒 → 6.5秒 に増加"
+      ]
+    },
+    {
+      "name": "Mina",
+      "changes": [
+        "Nox Nostra DPS を6%減少"
+      ]
+    },
+    {
+      "name": "Mirage",
+      "changes": [
+        "ベース体力再生: 2 → 1.5 に減少",
+        "Fire Scarabs 持続時間: 8秒 → 7秒 に減少"
+      ]
+    },
+    {
+      "name": "Mo & Krill",
+      "changes": [
+        "Burrow 移動速度ボーナス: +4 → +5 に増加"
+      ]
+    },
+    {
+      "name": "Paige",
+      "changes": [
+        "スタミナ: 2 → 3 に増加",
+        "ダッシュ速度をスローバケットに減少",
+        "Plot Armor クールダウン: 30秒 → 28秒 に減少",
+        "Bookwyrm リチャージタイマー: 8秒 → 7秒 に減少"
+      ]
+    },
+    {
+      "name": "Paradox",
+      "changes": [
+        "Kinetic Carbine クールダウン: 30秒 → 28秒 に減少",
+        "Time Wall T2 武器ダメージ: +30% → +35% に増加",
+        "Kinetic Carbine チャージ時にエアダッシュ距離+20%を付与するように"
+      ]
+    },
+    {
+      "name": "Pocket",
+      "changes": [
+        "Enchanter's Satchel スピリットスケール: 0.9 → 1.1 に増加",
+        "Affliction クールダウン: 150秒 → 140秒 に減少"
+      ]
+    },
+    {
+      "name": "Rem",
+      "changes": [
+        "Naptime 詠唱中に攻撃できるバグを修正",
+        "Pillow Toss リチャージタイマー: 10秒 → 9秒 に減少"
+      ]
+    },
+    {
+      "name": "Shiv",
+      "changes": [
+        "サブ射撃のノックバックを10%減少",
+        "Serrated Knives スピリットスケール: 0.15 → 0.13 に減少",
+        "Serrated Knives T3 スピリットスケール: +0.1 → +0.09 に減少"
+      ]
+    },
+    {
+      "name": "Silver",
+      "changes": [
+        "Tail Whack が武装解除の持続時間中に-12%弾丸耐性を適用するバグを修正",
+        "Slam Fire 現在体力ダメージ: 4% → 3% に減少"
+      ]
+    },
+    {
+      "name": "Venator",
+      "changes": [
+        "Gutshot ダメージスケール: 0.8 → 0.7 に減少",
+        "Gutshot 壁ヒットダメージスケール: 0.9 → 0.8 に減少"
+      ]
+    },
+    {
+      "name": "Victor",
+      "changes": [
+        "Aura of Suffering T2: +28最大DPS → +34最大DPS に増加",
+        "Shocking Reanimation T3 クールダウン短縮: -100秒 → -130秒 に増加"
+      ]
+    },
+    {
+      "name": "Viscous",
+      "changes": [
+        "Goo Ball の再適用までのロックアウト時間: 1.35 → 1.2 に減少（CC連続適用時のデバフ耐性バグ修正に伴う調整）",
+        "Splatter が正しくバウンスしない複数の場所を修正"
+      ]
+    },
+    {
+      "name": "Vyper",
+      "changes": [
+        "Lethal Venom クールダウン: 24秒 → 28秒 に増加",
+        "Lethal Venom T2 クールダウン短縮: -8秒 → -12秒 に増加",
+        "Lethal Venom 射程: 15m → 10m に減少、ボーン依存スケール追加（0.2）",
+        "Armor Piercing Rounds が Petrify 中にダメージを与えるバグを修正"
+      ]
+    }
+  ]
+}

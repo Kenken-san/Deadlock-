@@ -1,0 +1,314 @@
+{
+  "date": "2026-05-22",
+  "label": "5月22日パッチ",
+  "heroes": [
+    {
+      "name": "Abrams",
+      "changes": [
+        "Infernal Resilience T1: \"+1.5 Health Regen\" から \"+200 Max Health\" に変更",
+        "Infernal Resilience T2: \"200 Max Health\" から \"+18% Melee Lifesteal（非ヒーロー相手は40%効果）\" に変更",
+        "Seismic Impact T2 スタン時間: +0.7秒 → +0.8秒 に増加",
+        "Seismic Impact T3 Unstoppable 持続時間: 5秒 → 6秒 に増加"
+      ]
+    },
+    {
+      "name": "Apollo",
+      "changes": [
+        "ヒットボックスを改善（ヒットしやすくなった）",
+        "ベース体力再生: 2 → 1 に減少",
+        "Riposte が自動ダッシュしなくなった。代わりにジャンプ先のヒーローをターゲットするサブアビリティを短時間付与（パリィ前に敵をターゲットしてバッファリング可能）。射程25m",
+        "Riposte がダメージオーラ（Flame Dashなど）で発動しなくなった",
+        "Riposte がオブジェクトへのダメージで発動しなくなった",
+        "Flawless Advance のヒットボックスを10%縮小"
+      ]
+    },
+    {
+      "name": "Bebop",
+      "changes": [
+        "Boon毎の弾丸ダメージ: 0.139 → 0.115 に減少",
+        "Exploding Uppercut T2 武器ダメージ: +40% → +30% に減少",
+        "Sticky Bomb T2 ダメージ: +75 → +85 に増加"
+      ]
+    },
+    {
+      "name": "Billy",
+      "changes": [
+        "Boon毎の体力: +48 → +59 に増加",
+        "Boon毎の弾丸ダメージ: 0.165 → 0.142 に減少",
+        "Rising Ram クールダウン: 30秒 → 32秒 に増加",
+        "Rising Ram T2 持続時間: +0.3秒 → +0.4秒 に増加",
+        "Rising Ram T3 クールダウン短縮: -10秒 → -13秒 に増加"
+      ]
+    },
+    {
+      "name": "Calico",
+      "changes": [
+        "Gloom Bomb T2: \"+75 バリアへのダメージ\" から \"爆弾1つごとに-5% メレー耐性（5秒、スタック可能）\" に変更"
+      ]
+    },
+    {
+      "name": "Celeste",
+      "changes": [
+        "ヒットボックスを改善（ヒットしやすくなった）",
+        "スタミナクールダウン: 4.5秒 → 5秒 に増加",
+        "Radiant Daggers T2: \"-18秒 クールダウン & +70 ダメージ\" から \"-22秒 クールダウン & +80 ダメージ\" に変更",
+        "Shining Wonder T2 ダメージ: +50 → +70 に増加"
+      ]
+    },
+    {
+      "name": "Doorman",
+      "changes": [
+        "Call Bell 範囲: 6m → 5.5m に減少",
+        "Call Bell T3 範囲ボーナス: +4m → +4.5m に増加",
+        "Call Bell 爆発ダメージのスピリットスケール: 1.4 → 1.3 に減少",
+        "Call Bell の命中精度デバフが1秒で100%→0%に減衰しなくなった（残り4秒間維持）",
+        "Call Bell の命中精度デバフ: -100% → -40% に減少（全持続時間中一定）",
+        "ドアを閉じるサブアビリティが8秒のクールダウン開始状態でスタートするように",
+        "Doorway がサイレンス不可でなくなった",
+        "Luggage Cart がディスペルされないバグを修正"
+      ]
+    },
+    {
+      "name": "Drifter",
+      "changes": [
+        "Rend T3 がスピリットスケールを0.4増加しなくなった",
+        "Rend T3 がヘビーメレーダメージ（スケール0.55）も与えるようになった"
+      ]
+    },
+    {
+      "name": "Dynamo",
+      "changes": [
+        "Kinetic Pulse T2 弾丸耐性減少: -18% → -15% に縮小",
+        "Kinetic Pulse スピリットスケール: 1.65 → 1.55 に減少",
+        "Quantum Entanglement T3: 非ウルトデバフを解除する効果から、非ウルトデバフ持続時間を50%短縮する効果に変更"
+      ]
+    },
+    {
+      "name": "Graves",
+      "changes": [
+        "スプリント速度: 1.6 → 2.2 に増加",
+        "Grasping Hands がベースアビリティで幽霊を1体召喚するようになった（T3は+1体追加）",
+        "Deadheads の追跡時ダッシュ範囲をGravesの中心から計算するように更新",
+        "Deadheads の射撃速度バフが最初ではなく次の攻撃から適用されるバグを修正",
+        "Deadheads がベールを通してダッシュできないバグを修正",
+        "Deadheads が追跡モード時に攻撃範囲ギリギリのターゲットへダッシュできないバグを修正",
+        "Deadheads の弾丸ダメージが距離減衰の影響を受けないバグを修正",
+        "Deadheads が視線を失ってから追跡停止まで0.1秒のバッファを追加",
+        "Deadheads が追跡中にGravesが死亡すると無効化されるバグを修正",
+        "Jar of Dead スピリットスケール: 0.35 → 0.31 に減少（ダメージ増加に伴う調整）",
+        "Gravesを追跡するDeadheadsの速度・加速度を増加（戦闘中は影響なし）",
+        "特定のプロジェクタイル（Gray Talonの鳥など）がDeadheadsに当たるバグを修正",
+        "Gravesのメレーがdeadheadsのダッシュターゲットも設定するように更新",
+        "弾丸ダメージと成長率を10%減少"
+      ]
+    },
+    {
+      "name": "Grey Talon",
+      "changes": [
+        "Rain of Arrows クールダウン: 30秒 → 22秒 に減少",
+        "Rain of Arrows 詠唱遅延: 0.5秒 → 0.2秒 に減少",
+        "Rain of Arrows 持続時間: 7秒 → 4秒 に減少",
+        "Rain of Arrows の空中での移動を改善",
+        "Rain of Arrows スタミナ距離補正: -9% → +25% に変更",
+        "Rain of Arrows 武器ダメージボーナス: +4 → +3 に減少",
+        "Rain of Arrows T1: \"-14秒 クールダウン\" から \"+3 武器ダメージ & +30% スロー（1.5秒）\" に変更",
+        "Rain of Arrows T2: \"+5 武器ダメージ & +40% スロー（1.5秒）\" から \"-13秒 クールダウン\" に変更（合計クールダウン16秒→9秒）"
+      ]
+    },
+    {
+      "name": "Haze",
+      "changes": [
+        "Fixation T3: +0.12 → +0.14 に増加"
+      ]
+    },
+    {
+      "name": "Holliday",
+      "changes": [
+        "ベース弾丸ダメージ: 18.8 → 19.7 に増加",
+        "体力再生: 1 → 2 に増加"
+      ]
+    },
+    {
+      "name": "Infernus",
+      "changes": [
+        "弾丸サイズ: 3 → 4 に増加",
+        "Concussive Combustion T3 スタン時間: +0.75秒 → +0.9秒 に増加"
+      ]
+    },
+    {
+      "name": "Kelvin",
+      "changes": [
+        "Frost Grenade ダメージスピリットスケール: 0.7 → 0.6 に減少",
+        "Ice Path 中断時に足元に氷の道を生成しなくなり、代わりにそのまま地面に落下するように変更",
+        "Arctic Beam DPS スピリットスケール: 0.5 → 0.38 に減少"
+      ]
+    },
+    {
+      "name": "Lash",
+      "changes": [
+        "Boon毎の弾丸ダメージ: 0.341 → 0.31 に減少",
+        "Ground Strike のメートルあたりダメージスピリットスケール: 0.0372 → 0.04 に増加",
+        "Grapple T2 のボーナスダメージがスタックしなくなり、持続時間をリフレッシュするように変更",
+        "Grapple T3 がチャージ+1を付与するようになった"
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "changes": [
+        "Boon毎の弾丸ダメージ: 0.17 → 0.18 に増加",
+        "Heavy Barrage が Diviner's Kevlar を発動しないバグを修正",
+        "Medicinal Specter 範囲: 5.5m → 6m に増加"
+      ]
+    },
+    {
+      "name": "Mina",
+      "changes": [
+        "固有効果としてデバフ耐性-8%を追加",
+        "高ピン時にRakeが機能しないことがあるバグを修正",
+        "Love Bites T3 クールダウン短縮: -4秒 → -5秒 に増加",
+        "Love Bites のオンヒットフラットダメージがアビリティに適用されなくなった（Nox Nostraで20%加算されていた問題を修正）",
+        "Nox Nostra T3 現在HP割合ダメージ: 1% → 0.5% に減少"
+      ]
+    },
+    {
+      "name": "Mirage",
+      "changes": [
+        "Djinn's Mark のビジュアルを更新"
+      ]
+    },
+    {
+      "name": "Mo & Krill",
+      "changes": [
+        "掘削中にメレー攻撃を受けてもノックアップしなくなった",
+        "Sand Blast T3 持続時間: +1秒 → +1.5秒 に増加"
+      ]
+    },
+    {
+      "name": "Paige",
+      "changes": [
+        "Bookwyrm T2 クールダウン短縮: -8秒 → -12秒 に改善",
+        "Rallying Charge T3 ダメージ: +135 → +160 に増加",
+        "Rallying Charge が味方・敵どちらにもヒットしなかった場合のクールダウンが半分になった"
+      ]
+    },
+    {
+      "name": "Paradox",
+      "changes": [
+        "Time Wall T1 持続時間ボーナス: +2.5秒 → +3.5秒 に増加",
+        "Time Wall T3 チャージボーナス: +1 → +2 に増加",
+        "Time Wall T3 チャージ遅延: 4秒 → 2秒 に減少",
+        "Kinetic Carbine T3 最大ダメージスケールボーナス: +50% → +55% に増加",
+        "Paradoxical Swap ダメージ: 125 → 150 に増加"
+      ]
+    },
+    {
+      "name": "Pocket",
+      "changes": [
+        "Flying Cloak T2 武器ダメージ持続時間: 8秒 → 6秒 に減少",
+        "Affliction クールダウン: 140秒 → 150秒 に増加"
+      ]
+    },
+    {
+      "name": "Rem",
+      "changes": [
+        "Pillow Toss チャージ時間: 9秒 → 8秒 に減少",
+        "Pillow Toss T3 ダメージ: +90 → +100 に増加",
+        "Tag Along のバーストヒールが2次ジャンプ先の味方にも適用されるように",
+        "Tag Along の継続ヒール持続時間: 3秒 → 2秒 に減少（総ヒール量は同じでより速く回復）",
+        "Tag Along T2 バリアとアイテム効果量: 25% → 35% に増加",
+        "Tag Along T3 が不足体力ヒール（0.03→0.05）と毎秒再生（0.66→1.0）の増加も追加",
+        "Tag Along がベールを通して使用できるようになった",
+        "Tag Along から脱出後のロックアウト時間: 1秒 → 0.3秒 に減少",
+        "Tag Along で味方に飛んでいく時間が50%短縮",
+        "Tag Along のヒール持続時間がHUDと体力バーアイコンに表示されるように",
+        "Tag Along 使用中にRemが死亡する特定のアビリティ/アイテムを修正",
+        "Tag Along 使用中にフレンドリーオーラがRemにも適用されるように",
+        "Tag Along の脱出がデバフ耐性の影響を受けなくなり、地面に当たるのを防ぐため上方向にわずかに飛ぶように",
+        "Tag Along の脱出後に移動制限と入力制限が短時間かかるバグを修正",
+        "Naptime がベースアビリティで+30%ダメージ軽減を付与するように（T3は+50%追加）"
+      ]
+    },
+    {
+      "name": "Seven",
+      "changes": [
+        "弾丸ダメージ成長率: 0.374 → 0.337 に減少",
+        "クリティカル軽減: 35% → 55% に増加"
+      ]
+    },
+    {
+      "name": "Shiv",
+      "changes": [
+        "Slice and Dice T2 スピリット耐性デバフ: -8% → -6% に縮小",
+        "Bloodletting 遅延ダメージクリア量: 40% → 35% に減少",
+        "Bloodletting T3 遅延ダメージクリアボーナス: +45% → +50% に増加",
+        "Killing Blow クールダウン: 105秒 → 125秒 に増加",
+        "Killing Blow フルレイジ時ダメージボーナス: 14% → 12% に減少",
+        "Killing Blow T2 フルレイジダメージボーナス: +8% → +10% に増加",
+        "Killing Blow T2 がクールダウン-30秒も付与するようになった"
+      ]
+    },
+    {
+      "name": "Silver",
+      "changes": [
+        "弾丸サイクルタイム: 0.9秒 → 0.85秒 に短縮（全体DPSは同値に調整）",
+        "Entangling Bola 使用中にジャンプとマントルができなくなるバグを修正",
+        "Entangling Bola T2: \"+0.75秒 持続時間\" から \"-5秒 クールダウン\" に変更",
+        "Entangling Bola T3: \"-5秒 クールダウン & 2体の追加ターゲットへリコシェット\" から \"+0.75秒 持続時間 & 2体の追加ターゲットへリコシェット\" に変更",
+        "Lycan Curse 射撃速度: 80% → 65% に減少",
+        "Lycan Curse 射撃速度スピリットスケール: 0.25 → 0.45 に増加"
+      ]
+    },
+    {
+      "name": "Venator",
+      "changes": [
+        "体力: 790+43/boon → 830+48/boon に増加",
+        "Hex-Lined Snap Trap T3 露出ターゲットへのダメージ: +25% → +30% に増加",
+        "Hex-Lined Snap Trap T3 がチャージ+1を付与するようになった"
+      ]
+    },
+    {
+      "name": "Victor",
+      "changes": [
+        "弾丸ダメージ: 13+0.3135 → 12+0.26 に減少",
+        "Jumpstart T3 スピリットスケール: +0.6 → +0.9 に増加",
+        "Aura of Suffering がオブジェクトに対して50%のダメージを与えるようになった"
+      ]
+    },
+    {
+      "name": "Viscous",
+      "changes": [
+        "Puddle Punch T1 がダメージ+20も追加するようになった",
+        "Puddle Punch T2 がダメージ+30を増加しなくなった",
+        "Puddle Punch T2 がライフスティール+40%（非ヒーロー相手は1/4）を付与するようになった"
+      ]
+    },
+    {
+      "name": "Vyper",
+      "changes": [
+        "Screwjab Dagger T2 スタックごとの弾丸耐性デバフ: -5% → -6% に増加",
+        "Screwjab Dagger T3 が最大スタック+2を付与するようになった"
+      ]
+    },
+    {
+      "name": "Warden",
+      "changes": [
+        "Boon毎の弾丸ダメージ: 0.38 → 0.34 に減少",
+        "Willpower T3 のデバフ耐性が使用時に既存のデバフに遡及して適用されるように",
+        "Binding Word T2 がキャスト範囲+12mを付与しなくなった"
+      ]
+    },
+    {
+      "name": "Yamato",
+      "changes": [
+        "Power Slash のポストキャスト時間: 0.4秒 → 0.2秒 に減少",
+        "Power Slash スピリットスケール: 1.86 → 2.1 に増加",
+        "Flying Slash 射程: 25m → 30m に増加",
+        "Flying Slash T2 がキャスト範囲+20mを付与しなくなった",
+        "Flying Slash T3 がキャスト範囲+15mを付与するようになった",
+        "Flying Slash T3 チャージ: +1 → +2 に増加",
+        "Crimson Slash がカメラを上下に向けすぎると当たらないバグを修正",
+        "Shadow Transformation T1 武器ダメージ: +5 → +7 に増加"
+      ]
+    }
+  ]
+}

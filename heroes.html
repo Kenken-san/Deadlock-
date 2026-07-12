@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ヒーロー統計ダッシュボード | Deadlock 日本語ファンサイト</title>
+  <meta name="description" content="Deadlockのヒーロー勝率・ピック率ダッシュボード。最新の統計データを掲載。" />
+  <link rel="canonical" href="https://deadlock-jp.com/heroes.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://deadlock-jp.com/heroes.html" />
+  <meta property="og:title" content="ヒーロー統計ダッシュボード | Deadlock 日本語ファンサイト" />
+  <meta property="og:description" content="Deadlockのヒーロー勝率・ピック率ダッシュボード。最新の統計データを掲載。" />
+  <meta property="og:site_name" content="Deadlock Fan Site" />
+  <meta property="og:locale" content="ja_JP" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.1);
+      --text: #f5f7fa;
+      --muted: #aab3c2;
+      --accent: #ffb84d;
+      --line: rgba(255,255,255,0.12);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1180px;
+      --green: #4ade80;
+      --red: #f87171;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,184,77,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,168,254,0.10), transparent 20%),
+        linear-gradient(180deg, #0b0d10 0%, #10141a 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+
+    .site-nav a:hover, .site-nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .hero {
+      padding: 72px 0 30px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .updated-at {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+    }
+
+    .section {
+      padding: 18px 0 60px;
+    }
+
+    /* ソートボタン */
+    .sort-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .sort-bar span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .sort-btn {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      padding: 5px 14px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+      font-family: inherit;
+    }
+
+    .sort-btn:hover, .sort-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* テーブル */
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .stats-table thead th {
+      text-align: left;
+      padding: 10px 16px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .stats-table thead th:hover {
+      color: var(--accent);
+    }
+
+    .stats-table thead th.sorted {
+      color: var(--accent);
+    }
+
+    .stats-table tbody tr {
+      border-bottom: 1px solid var(--line);
+      transition: background .15s;
+    }
+
+    .stats-table tbody tr:hover {
+      background: var(--panel);
+    }
+
+    .stats-table tbody td {
+      padding: 12px 16px;
+    }
+
+    .rank {
+      color: var(--muted);
+      font-size: 0.88rem;
+      width: 40px;
+    }
+
+    .hero-name {
+      font-weight: 600;
+    }
+
+    .win-rate {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .win-rate.high { color: var(--green); }
+    .win-rate.low  { color: var(--red); }
+
+    .pick-rate {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .matches {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ウィンレートバー */
+    .bar-wrap {
+      width: 120px;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    footer {
+      padding: 10px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 640px) {
+      .bar-wrap, .matches { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html">ホーム</a>
+    <a href="heroes.html" class="active">ヒーロー統計</a>
+    <a href="tier-list.html">Tier List</a>
+    <a href="patch-notes.html">パッチノート翻訳</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Deadlock Fan Site / ヒーロー統計</div>
+      <h1>ヒーロー統計<br>ダッシュボード</h1>
+      <p class="lead">全ヒーローの勝率・ピック率を掲載しています。</p>
+      <p class="updated-at" id="updated-at">データ読み込み中...</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="sort-bar">
+          <span>並び替え:</span>
+          <button class="sort-btn active" data-key="win_rate">勝率</button>
+          <button class="sort-btn" data-key="pick_rate">ピック率</button>
+          <button class="sort-btn" data-key="name">名前</button>
+        </div>
+        <div id="table-wrap">
+          <p style="color:var(--muted)">読み込み中...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+
+  <script>
+    const S3_URL = 'https://deadlock-patch-data.s3.ap-northeast-1.amazonaws.com/hero-stats.json';
+    let allHeroes = [];
+    let sortKey = 'win_rate';
+    let sortAsc = false;
+
+    function fmt(rate, decimals = 1) {
+      return (rate * 100).toFixed(decimals) + '%';
+    }
+
+    function winClass(rate) {
+      if (rate >= 0.52) return 'high';
+      if (rate <= 0.48) return 'low';
+      return '';
+    }
+
+    function renderTable(heroes) {
+      const sorted = [...heroes].sort((a, b) => {
+        if (sortKey === 'name') {
+          return sortAsc
+            ? a.name.localeCompare(b.name)
+            : b.name.localeCompare(a.name);
+        }
+        return sortAsc ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
+      });
+
+      const rows = sorted.map((h, i) => `
+        <tr>
+          <td class="rank">${i + 1}</td>
+          <td class="hero-name">${h.name}</td>
+          <td class="win-rate ${winClass(h.win_rate)}">${fmt(h.win_rate)}</td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar-fill" style="width:${Math.min(h.win_rate * 2 * 100, 100)}%"></div>
+            </div>
+          </td>
+          <td class="pick-rate">${fmt(h.pick_rate, 2)}</td>
+          <td class="matches">${h.matches.toLocaleString()}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('table-wrap').innerHTML = `
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th data-col="name" class="${sortKey === 'name' ? 'sorted' : ''}">ヒーロー</th>
+              <th data-col="win_rate" class="${sortKey === 'win_rate' ? 'sorted' : ''}">勝率</th>
+              <th></th>
+              <th data-col="pick_rate" class="${sortKey === 'pick_rate' ? 'sorted' : ''}">ピック率</th>
+              <th>マッチ数</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+
+      document.querySelectorAll('.stats-table thead th[data-col]').forEach(th => {
+        th.addEventListener('click', () => {
+          const col = th.dataset.col;
+          if (sortKey === col) {
+            sortAsc = !sortAsc;
+          } else {
+            sortKey = col;
+            sortAsc = col === 'name';
+          }
+          document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b.dataset.key === sortKey));
+          renderTable(allHeroes);
+        });
+      });
+    }
+
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.key;
+        if (sortKey === key) {
+          sortAsc = !sortAsc;
+        } else {
+          sortKey = key;
+          sortAsc = key === 'name';
+        }
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b.dataset.key === sortKey));
+        renderTable(allHeroes);
+      });
+    });
+
+    async function init() {
+      const res = await fetch(S3_URL);
+      const data = await res.json();
+      allHeroes = data.heroes;
+
+      const date = new Date(data.updated_at);
+      document.getElementById('updated-at').textContent =
+        `最終更新: ${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+
+      renderTable(allHeroes);
+    }
+
+    init().catch(() => {
+      document.getElementById('table-wrap').innerHTML =
+        '<p style="color:var(--muted)">データの読み込みに失敗しました。</p>';
+    });
+  </script>
+</body>
+</html>

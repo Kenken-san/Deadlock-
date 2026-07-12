@@ -1,0 +1,31 @@
+name: Fetch Hero Stats to S3
+
+on:
+  schedule:
+    - cron: '0 0 1,15 * *'  # 毎月1日・15日 (約2週間ペース)
+  workflow_dispatch:          # 手動実行も可能
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: scripts
+
+      - name: Fetch and upload hero stats
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-northeast-1
+        run: node fetch-hero-stats.js
+        working-directory: scripts

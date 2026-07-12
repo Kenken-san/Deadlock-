@@ -1,7 +1,7 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 const STATS_URL = 'https://api.deadlock-api.com/v1/analytics/hero-stats';
-const HEROES_URL = 'https://api.deadlock-api.com/v1/heroes';
+const HEROES_URL = 'https://api.deadlock-api.com/v1/assets/heroes?only_active=true';
 const BUCKET = 'deadlock-patch-data';
 const KEY = 'hero-stats.json';
 

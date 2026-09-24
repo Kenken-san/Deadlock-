@@ -1,0 +1,236 @@
+[
+  {
+    "hero": "Bebop",
+    "items": [
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "発動中はフック・スティッキーボムを完全に無効化できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "フックのチャネル中に沈黙を与えて中断させられる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "フックで付与されるデバフの持続時間を短縮できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Bebopの高い弾ダメージを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Billy",
+    "items": [
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "突進技やジャンプ攻撃を空中で落とせる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "チャージ攻撃を無効化して安全に戦える" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "機動力を削いで近づかせない" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "近接・弾ダメージ両方を軽減できる" }
+    ]
+  },
+  {
+    "hero": "Calico",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "高いライフスティール・回復力を無効化できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "テレポートやジャンプ技を中断させられる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "スタン・スローなどのデバフ時間を短縮できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "スピリットダメージが高いので軽減が有効" }
+    ]
+  },
+  {
+    "hero": "Celeste",
+    "items": [
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "弱体化された弾ダメージをさらに軽減できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "アビリティのチャネルを中断させられる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "スピリット依存なので沈黙が特に有効" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Light EaterなどのスピリットDPSを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Doorman",
+    "items": [
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Luggage Cartのチャージ中に落とせる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Call BellやLuggage Cartを無効化できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "イモビライズ・スローの時間を短縮できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "近距離での弾ダメージを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Dynamo",
+    "items": [
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Quantum Entanglementのチャネルを空中で中断できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "ウルト含む全アビリティを封じられる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "引き寄せ効果から即座に脱出できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "ウルトのスピリットダメージを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Grey Talon",
+    "items": [
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Charged ShotやOwlのダメージを完全無効化できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "遠距離からの弾ダメージを軽減できる" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "移動速度を下げて距離を詰めやすくなる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Charged Shotのチャネルを中断できる" }
+    ]
+  },
+  {
+    "hero": "Haze",
+    "items": [
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "Bullet DanceやSleep Daggerを封じられる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Fixationスタックによる高い弾ダメージを軽減できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "Sleep Daggerのスリープ時間を短縮できる" },
+      { "name": "Ethereal Shift", "nameJa": "エーテリアルシフト", "reason": "Bullet Dance発動中に無敵で回避できる" }
+    ]
+  },
+  {
+    "hero": "Holliday",
+    "items": [
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "高い弾ダメージ出力を軽減できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Bounce Padで逃げるところを落とせる" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "機動力を落として追いやすくなる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Crackshotの一撃を無効化できる" }
+    ]
+  },
+  {
+    "hero": "Infernus",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Afterburnのライフスティールを無効化できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "炎上ダメージ(スピリット)を大幅に軽減できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "Afterburnの燃焼持続時間を短縮できる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "燃焼デバフをすぐに解除できる" }
+    ]
+  },
+  {
+    "hero": "Kelvin",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Ice PathやFrost Grenadeの回復効果を無効化できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "スピリットダメージ中心なので有効" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "スロー・フリーズの持続時間を短縮できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "チーム回復を担うアビリティを封じられる" }
+    ]
+  },
+  {
+    "hero": "Lady Geist",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Life Drainのライフスティールを無効化できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "全アビリティがスピリットダメージなので効果大" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "Life DrainやSoul Exchangeを封じられる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "スロー・デバフの時間を短縮できる" }
+    ]
+  },
+  {
+    "hero": "Lash",
+    "items": [
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "空中でのウルト・Ground Strikeを中断できる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "チェーンやウルトのダメージを無効化できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "近接・弾ダメージを軽減できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "拘束・スタンの時間を短縮できる" }
+    ]
+  },
+  {
+    "hero": "McGinnis",
+    "items": [
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "タレット設置・ウルトを封じられる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Spectral Wallのスピリットダメージを軽減できる" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "移動速度が遅いので更に鈍らせて一方的に戦える" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Heavy Barrage（ウルト）のチャネルを中断できる" }
+    ]
+  },
+  {
+    "hero": "Mirage",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Fire Scarabsのライフスティールを無効化できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Fire ScarabsやDjinn's Markのダメージを軽減できる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "Djinn's Markのデバフを即座に解除できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Dust Devilの移動中を落とせる" }
+    ]
+  },
+  {
+    "hero": "Mo & Krill",
+    "items": [
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Sand Spiritの飲み込みを完全無効化できる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "地中からの拘束・スロー効果を即解除できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "地中移動中に飛び出すタイミングで落とせる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "近接攻撃の大きなダメージを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Paradox",
+    "items": [
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "Time Wallのスロー・拘束時間を短縮できる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "時間停止効果から即脱出できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Kinetic Carbineの弾ダメージを軽減できる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Kinetic Carbineの弾を無効化できる" }
+    ]
+  },
+  {
+    "hero": "Pocket",
+    "items": [
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Barrage・Afflictionのスピリットダメージを軽減できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "テレポートや全アビリティを封じられる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "Afflictionのデバフ効果を即解除できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Enchanted Satchelの飛翔中を落とせる" }
+    ]
+  },
+  {
+    "hero": "Rem",
+    "items": [
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Naptimeのチャネルを（T3前なら）中断できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "Tag AlongやNaptimeを封じられる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "スピリットダメージ中心なので有効" },
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "回復アビリティの効果を無効化できる" }
+    ]
+  },
+  {
+    "hero": "Seven",
+    "items": [
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Lightning Ball・Storm Cloud全般のダメージを軽減できる" },
+      { "name": "Silencer", "nameJa": "サイレンサー", "reason": "ウルト含む全アビリティを封じられる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Storm Cloudのチャネルを中断できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "スタン・スローの時間を短縮できる" }
+    ]
+  },
+  {
+    "hero": "Shiv",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Rage蓄積中の高い回復力を無効化できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Rage時の大幅に上昇した弾ダメージを軽減できる" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "Rage中の機動力を下げて逃げやすくなる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Killing Blow（ウルト）のトドメを防げる" }
+    ]
+  },
+  {
+    "hero": "Silver",
+    "items": [
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Slam Fireの高い弾ダメージバーストを軽減できる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Slam Fire発動中のダメージを無効化できる" },
+      { "name": "Slowing Hex", "nameJa": "スローイングヘックス", "reason": "機動力を落として接近を妨害できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Dash中に落として機動力を封じられる" }
+    ]
+  },
+  {
+    "hero": "Venator",
+    "items": [
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "Snap Trapのイモビライズ時間を短縮できる" },
+      { "name": "Debuff Remover", "nameJa": "デバフリムーバー", "reason": "Snap Trapのトラップから即脱出できる" },
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Consecrating GrenadeやGut Shotを無効化できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Consecrating GrenadeのスピリットDOTを軽減できる" }
+    ]
+  },
+  {
+    "hero": "Victor",
+    "items": [
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "Jumpstartの高い回復力を無効化できる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "Jumpstart後の高火力弾ダメージを軽減できる" },
+      { "name": "Spirit Armor", "nameJa": "スピリットアーマー", "reason": "Aura of SufferingのDOTを軽減できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Jumpstartのチャネルを中断できる" }
+    ]
+  },
+  {
+    "hero": "Vyper",
+    "items": [
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "高い弾ダメージ出力を軽減できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Slitherのスライド中を落として機動力を封じられる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "毒・デバフの持続時間を短縮できる" },
+      { "name": "Anti-Heal", "nameJa": "アンチヒール", "reason": "ライフスティール系の回復を無効化できる" }
+    ]
+  },
+  {
+    "hero": "Yamato",
+    "items": [
+      { "name": "Metal Skin", "nameJa": "メタルスキン", "reason": "Crimson Slash・Flying Strikeを無効化できる" },
+      { "name": "Knockdown", "nameJa": "ノックダウン", "reason": "Flying Strikeのジャンプ中を落とせる" },
+      { "name": "Bullet Armor", "nameJa": "バレットアーマー", "reason": "近接弾ダメージ両方を軽減できる" },
+      { "name": "Debuff Reducer", "nameJa": "デバフリデューサー", "reason": "Power Slash後のデバフ時間を短縮できる" }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+name: Upload Patch Notes to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/patches/**'
+  workflow_dispatch:   # 手動実行も可能
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync patch notes to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-northeast-1
+        run: |
+          aws s3 sync data/patches/ s3://deadlock-patch-data/patches/ \
+            --content-type application/json \
+            --cache-control "public, max-age=300" \
+            --delete

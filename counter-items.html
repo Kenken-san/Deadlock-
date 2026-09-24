@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock カウンター対策アイテム | 日本語ファンサイト</title>
+  <meta name="description" content="Deadlockの各ヒーローへの対策アイテムを日本語で解説。ヒーローを選んで最適なカウンターアイテムを確認できます。" />
+  <link rel="canonical" href="https://deadklock-jp.com/counter-items.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://deadklock-jp.com/counter-items.html" />
+  <meta property="og:title" content="Deadlock カウンター対策アイテム | 日本語ファンサイト" />
+  <meta property="og:description" content="Deadlockの各ヒーローへの対策アイテムを日本語で解説。" />
+  <meta property="og:site_name" content="Deadlock Fan Site" />
+  <meta property="og:locale" content="ja_JP" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.1);
+      --text: #f5f7fa;
+      --muted: #aab3c2;
+      --accent: #ffb84d;
+      --line: rgba(255,255,255,0.12);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,184,77,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,168,254,0.10), transparent 20%),
+        linear-gradient(180deg, #0b0d10 0%, #10141a 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .hero {
+      padding: 72px 0 30px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 60ch;
+    }
+
+    .section {
+      padding: 18px 0 60px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: -0.02em;
+    }
+
+    /* ヒーロー選択ボタン */
+    .hero-btn-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-btn {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      padding: 7px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
+      font-family: inherit;
+    }
+
+    .hero-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-btn.active {
+      background: rgba(255,184,77,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* カウンター結果エリア */
+    #counter-result {
+      padding-top: 0;
+    }
+
+    .result-heading {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .result-heading span {
+      color: var(--accent);
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .counter-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .counter-item-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .counter-item-en {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .counter-item-reason {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    footer {
+      padding: 10px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html">ホーム</a>
+    <a href="tier-list.html">ヒーロー Tier List</a>
+    <a href="patch-notes.html">パッチノート翻訳</a>
+    <a href="counter-items.html" class="active">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Deadlock Fan Site / カウンター対策</div>
+      <h1>カウンター<br>対策アイテム</h1>
+      <p class="lead">
+        対策したいヒーローを選ぶと、有効なカウンターアイテムと理由を表示します。
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>ヒーローを選択</h2>
+        </div>
+        <div class="hero-btn-grid" id="hero-buttons"></div>
+      </div>
+    </section>
+
+    <section class="section" id="counter-result" style="display:none; padding-top:0;">
+      <div class="container">
+        <h2 class="result-heading" id="counter-hero-name"></h2>
+        <div class="counter-grid" id="counter-items-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+
+  <script>
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    async function init() {
+      const data = await fetch('./data/counters.json').then(r => r.json());
+      const btnGrid = document.getElementById('hero-buttons');
+
+      data.forEach(entry => {
+        const btn = document.createElement('button');
+        btn.className = 'hero-btn';
+        btn.textContent = entry.hero;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.hero-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          document.getElementById('counter-hero-name').innerHTML =
+            `<span>${escHtml(entry.hero)}</span> への対策アイテム`;
+
+          document.getElementById('counter-items-list').innerHTML =
+            entry.items.map(item => `
+              <div class="counter-card">
+                <div class="counter-item-name">${escHtml(item.nameJa)}</div>
+                <div class="counter-item-en">${escHtml(item.name)}</div>
+                <div class="counter-item-reason">${escHtml(item.reason)}</div>
+              </div>
+            `).join('');
+
+          const result = document.getElementById('counter-result');
+          result.style.display = '';
+          result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        btnGrid.appendChild(btn);
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>

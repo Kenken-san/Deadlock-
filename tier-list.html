@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deadlock Hero Tier List | 日本語ファンサイト</title>
-  <meta name="description" content="Deadlockのヒーロー評価ランキング（Tier List）と最新パッチノートの日本語翻訳を掲載しています。" />
+  <meta name="description" content="Deadlockのヒーローティアリスト。最新の勝率データからS/A/B/C/Dランクを自動生成しています。" />
   <link rel="canonical" href="https://deadlock-jp.com/tier-list.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://deadlock-jp.com/tier-list.html" />
   <meta property="og:title" content="Deadlock Hero Tier List | 日本語ファンサイト" />
-  <meta property="og:description" content="Deadlockのヒーロー評価ランキングと最新パッチノート日本語翻訳を掲載" />
+  <meta property="og:description" content="Deadlockのヒーローティアリスト。最新の勝率データからランクを自動生成。" />
   <meta property="og:site_name" content="Deadlock Fan Site" />
   <meta property="og:locale" content="ja_JP" />
   <style>
@@ -24,6 +24,11 @@
       --shadow: 0 20px 50px rgba(0,0,0,0.35);
       --radius: 22px;
       --max: 1180px;
+      --tier-s: #ff6b6b;
+      --tier-a: #ffb84d;
+      --tier-b: #4ade80;
+      --tier-c: #6ea8fe;
+      --tier-d: #9aa3b2;
     }
 
     * { box-sizing: border-box; }
@@ -57,6 +62,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(12px);
+      flex-wrap: wrap;
     }
 
     .site-nav a {
@@ -74,15 +80,9 @@
       border-bottom-color: var(--accent);
     }
 
+    /* ヘッダー */
     .hero {
-      padding: 72px 0 30px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 28px;
-      align-items: center;
+      padding: 72px 0 24px;
     }
 
     .eyebrow {
@@ -105,75 +105,35 @@
     }
 
     .lead {
-      margin: 0 0 26px;
+      margin: 0 0 8px;
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 60ch;
+      max-width: 62ch;
     }
 
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .meta-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-      min-width: 150px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    .meta-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 2px;
-    }
-
-    .meta-card span {
+    .updated-at {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
     }
 
-    .hero-panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
+    /* セクション */
     .section {
       padding: 18px 0 60px;
     }
 
-    .section-title {
+    /* ティア行 */
+    .tier-list {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tier-row {
+      display: grid;
+      grid-template-columns: 84px 1fr;
       gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      letter-spacing: -0.02em;
-    }
-
-    .section-title p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 54ch;
-      text-align: right;
-    }
-
-    .image-card {
+      align-items: stretch;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -181,45 +141,82 @@
       box-shadow: var(--shadow);
     }
 
-    .image-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #000;
+    .tier-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0b0d10;
+      letter-spacing: -0.02em;
     }
 
-    .image-caption {
-      padding: 16px 18px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      border-top: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+    .tier-label small {
+      font-size: 0.62rem;
+      font-weight: 600;
+      opacity: 0.75;
+      letter-spacing: 0.02em;
     }
 
-    .cards {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .tier-label.s { background: var(--tier-s); }
+    .tier-label.a { background: var(--tier-a); }
+    .tier-label.b { background: var(--tier-b); }
+    .tier-label.c { background: var(--tier-c); }
+    .tier-label.d { background: var(--tier-d); }
+
+    .tier-heroes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px;
+      align-content: center;
     }
 
-    .card {
-      background: var(--panel);
+    .hero-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 7px;
+      background: rgba(255,255,255,0.05);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 7px 12px;
+      font-size: 0.95rem;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .hero-chip .name {
+      font-weight: 600;
     }
 
-    .card p {
-      margin: 0;
+    .hero-chip .wr {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tier-empty {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 4px 2px;
+    }
+
+    /* 凡例 */
+    .legend {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .legend code {
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--text);
+    }
+
+    .status {
+      color: var(--muted);
+      padding: 20px 0;
     }
 
     footer {
@@ -233,75 +230,47 @@
       padding-top: 18px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        display: block;
-      }
-
-      .section-title p {
-        text-align: left;
-        margin-top: 8px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 640px) {
+      .tier-row { grid-template-columns: 62px 1fr; }
+      .tier-label { font-size: 1.6rem; }
+      .hero-chip { padding: 6px 10px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
   <nav class="site-nav">
     <a href="index.html">ホーム</a>
-    <a href="tier-list.html" class="active">ヒーロー Tier List</a>
+    <a href="heroes.html">ヒーロー統計</a>
+    <a href="tier-list.html" class="active">Tier List</a>
     <a href="patch-notes.html">パッチノート翻訳</a>
+    <a href="counter-items.html">カウンター対策</a>
   </nav>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Deadlock Fan Site / ヒーロー Tier List</div>
-        <h1>Deadlock<br>Hero Tier List</h1>
-        <p class="lead">
-          まずはヒーローティアリストをメインコンテンツとして公開するための、
-          シンプルで見やすい1ページ構成にしました。あとからビルド解説、
-          パッチノート、初心者向けガイドを追加していきます。
-        </p>
-
-      </div>
-      <div class="hero-panel">
-        <div style="color: var(--muted); font-size: 0.95rem; margin-bottom: 8px;">Featured</div>
-        <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">最新ヒーロー評価</div>
-        <div style="color: var(--muted);">
-          ヒーローの勝率データから作りました。
-        </div>
-      </div>
+    <div class="container">
+      <div class="eyebrow">Deadlock Fan Site / ヒーロー Tier List</div>
+      <h1>Deadlock<br>Hero Tier List</h1>
+      <p class="lead">
+        全ランク帯のヒーロー勝率データをもとに、S / A / B / C / D ランクへ自動で振り分けています。
+        パッチや環境の変化に合わせて自動更新されます。
+      </p>
+      <p class="updated-at" id="updated-at">データ読み込み中...</p>
     </div>
   </header>
 
   <main>
     <section class="section">
       <div class="container">
-        <div class="section-title">
-          <h2>Hero Tier List</h2>
-          <p>作成時期: 3月21日パッチ
-          </p>
+        <div id="tier-wrap" class="tier-list">
+          <p class="status">読み込み中...</p>
         </div>
 
-        <div class="image-card">
-          <img src="./img/my-image.png">
-          <div class="image-caption">
-            全ランク帯での勝率です。画質悪くてすみません。今後改善していく予定です。
-          </div>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <p>Last updated: April 2026</p>
-          </article>
+        <div class="legend">
+          ランクは全体勝率で判定しています：
+          <code>S ≥ 53%</code> ／ <code>A 51–53%</code> ／ <code>B 49–51%</code> ／
+          <code>C 47–49%</code> ／ <code>D &lt; 47%</code>。
+          各チップ内の数値はそのヒーローの勝率です。
+          より詳しい数値は<a href="heroes.html" style="color:var(--accent)">ヒーロー統計</a>ページをご覧ください。
         </div>
       </div>
     </section>
@@ -312,5 +281,73 @@
       非公式ファンサイト。DeadlockはValve Corporationの商標です。
     </div>
   </footer>
+
+  <script>
+    const S3_URL = 'https://deadlock-patch-data.s3.ap-northeast-1.amazonaws.com/hero-stats.json';
+
+    // ランク境界（勝率）。上限は含まない、下限は含む。
+    const TIERS = [
+      { key: 's', label: 'S', desc: '≥53%', min: 0.53 },
+      { key: 'a', label: 'A', desc: '51-53%', min: 0.51 },
+      { key: 'b', label: 'B', desc: '49-51%', min: 0.49 },
+      { key: 'c', label: 'C', desc: '47-49%', min: 0.47 },
+      { key: 'd', label: 'D', desc: '<47%', min: -Infinity },
+    ];
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function tierOf(winRate) {
+      return TIERS.find(t => winRate >= t.min);
+    }
+
+    function fmt(rate) {
+      return (rate * 100).toFixed(1) + '%';
+    }
+
+    function render(heroes) {
+      // 勝率降順で並べ、各ティアに振り分け
+      const sorted = [...heroes].sort((a, b) => b.win_rate - a.win_rate);
+      const buckets = Object.fromEntries(TIERS.map(t => [t.key, []]));
+      sorted.forEach(h => buckets[tierOf(h.win_rate).key].push(h));
+
+      const html = TIERS.map(t => {
+        const list = buckets[t.key];
+        const chips = list.length
+          ? list.map(h => `
+              <span class="hero-chip">
+                <span class="name">${esc(h.name)}</span>
+                <span class="wr">${fmt(h.win_rate)}</span>
+              </span>`).join('')
+          : '<span class="tier-empty">該当なし</span>';
+        return `
+          <div class="tier-row">
+            <div class="tier-label ${t.key}">${t.label}<small>${t.desc}</small></div>
+            <div class="tier-heroes">${chips}</div>
+          </div>`;
+      }).join('');
+
+      document.getElementById('tier-wrap').innerHTML = html;
+    }
+
+    async function init() {
+      const res = await fetch(S3_URL);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      const d = new Date(data.updated_at);
+      document.getElementById('updated-at').textContent =
+        `最終更新: ${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日（勝率データより自動生成）`;
+
+      render(data.heroes);
+    }
+
+    init().catch(() => {
+      document.getElementById('updated-at').textContent = '';
+      document.getElementById('tier-wrap').innerHTML =
+        '<p class="status">データの読み込みに失敗しました。時間をおいて再度お試しください。</p>';
+    });
+  </script>
 </body>
 </html>

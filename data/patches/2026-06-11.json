@@ -1,0 +1,175 @@
+{
+  "date": "2026-06-11",
+  "label": "6月11日パッチ",
+  "heroes": [
+    {
+      "name": "Apollo",
+      "changes": [
+        "Disengaging Sigil 速度を50%増加",
+        "Disengaging Sigil 速度の縦横比: 1.5:1 → 1:1 に変更",
+        "Disengaging Sigil 中にApolloの発射方向を入力で調整可能に（A/Dで左右、W/Sで後方移動量に影響）",
+        "Disengaging Sigil T1: 「+30ダメージ」→「8秒間 +25%射撃速度・弾速」に変更",
+        "Disengaging Sigil T2: 「10秒間+30%射撃速度・+50%弾速」→「プレイヤーヒット時: スタミナ+1回復・エアジャンプ/ダッシュ回数リセット」に変更",
+        "Disengaging Sigil T3: 「プレイヤーヒット時: スタミナ+2回復・エアジャンプ/ダッシュ回数リセット」→「4秒以内に再使用可能」に変更",
+        "Flawless Advance 中にパリィ可能に"
+      ]
+    },
+    {
+      "name": "Bebop",
+      "changes": [
+        "Exploding Uppercut T3 不足体力ダメージ: +17% → +18% に増加",
+        "Sticky Bomb T3 が5秒の持続時間ではなく爆発時に終了してしまうバグを修正",
+        "Sticky Bomb T3: 「設置時: 5秒間+5m移動速度・+20%射撃速度」→「設置時: 6秒間+5m移動速度・+25%デバフ耐性」に変更（既存効果にも遡及適用）"
+      ]
+    },
+    {
+      "name": "Calico",
+      "changes": [
+        "Gloom Bombs の近接耐性デバフが加算でスタックするように",
+        "Gloom Bombs T2: 5秒間-5%近接耐性 → 6秒間-6%近接耐性 に増加",
+        "Gloom Bombs の近接耐性デバフが爆発時ではなく着弾時に適用されるように",
+        "Return to Shadows ダメージ: 140 → 150 に増加",
+        "Return to Shadows T2 ダメージ: +65 → +75 に増加",
+        "Return to Shadows T3 回復量: 350 → 450 に増加"
+      ]
+    },
+    {
+      "name": "Doorman",
+      "changes": [
+        "Call Bell 爆発ダメージのスピリットスケール: 1.3 → 1.2 に減少",
+        "Call Bell T3 スピリットスケール: 0.4 → 0.35 に減少"
+      ]
+    },
+    {
+      "name": "Graves",
+      "changes": [
+        "Jar of Dead のチャージ収集速度を20%減少（チャージ獲得が遅くなる）",
+        "Jar of Dead ダメージ: 17+0.27 → 16+0.25 に減少",
+        "Jar of Dead バウンティ: 5+0.25/boon → 7+0.5/boon に増加",
+        "Grasping Hands T3 行動不能時間: +1秒 → +0.75秒 に減少"
+      ]
+    },
+    {
+      "name": "Grey Talon",
+      "changes": [
+        "射撃サイクルタイム: 0.5775 → 0.6 に増加（DPS約4%減少）",
+        "弾丸ダメージ成長: +1.0 → +0.85 に減少",
+        "Rain of Arrows クールダウン: 22秒 → 23秒 に増加",
+        "Rain of Arrows T2 クールダウン短縮: -13秒 → -12秒 に減少"
+      ]
+    },
+    {
+      "name": "Holliday",
+      "changes": [
+        "Powder Keg にオルト詠唱（自分の足元に設置）を追加",
+        "Powder Keg の発射角度・速度・キャスト時の感触を改善",
+        "Powder Keg の開始チャージ数: 2チャージに変更",
+        "Powder Keg チャージ時間: 3.5秒 → 7秒 に増加",
+        "Powder Keg スピリットスケール: 1.6 → 1.4 に減少",
+        "Powder Keg T2: 「+58ダメージ」→「+1チャージ」に変更",
+        "Powder Keg T3: 「+2チャージ・+0.4秒移動」→「+100ダメージ・スピリットスケール+0.5・チャージ時間-5秒」に変更",
+        "高所でのBounce Pad設置に関する複数の不具合を修正",
+        "Bounce Pad 着地範囲: 12m → 9m に減少",
+        "Bounce Pad T3: 「+68スタンプダメージ・改善されたスピリットスケール」→「スタンプ時+0.7秒スタン（Holliday自身の使用時のみ発動）」に変更"
+      ]
+    },
+    {
+      "name": "Infernus",
+      "changes": [
+        "Afterburn 最大持続時間の更新が、デバフ耐性と効果時間増加の両方を正しく反映していなかった問題を修正",
+        "Concussive Combustion がクールダウン中にT2や他のCD短縮アイテムを取得してもクールダウンが更新されないバグを修正"
+      ]
+    },
+    {
+      "name": "Ivy",
+      "changes": [
+        "Stone Form が意図せず大ダメージを与えることがあるバグを修正"
+      ]
+    },
+    {
+      "name": "McGinnis",
+      "changes": [
+        "Mini Turret DPS再調整: 30+0.39 → 24+0.42（スピリットパワー200で損益分岐）",
+        "Mini Turrets T3 射撃速度: +30% → +25% に減少",
+        "Heavy Barrage が稀に機能しなくなる不具合を修正",
+        "Heavy Barrage DPS: 22.5 → 21 に減少"
+      ]
+    },
+    {
+      "name": "Paige",
+      "changes": [
+        "Rallying Charge 最大増幅に必要な距離: 350m → 250m に減少",
+        "Rallying Charge T2 クールダウン短縮: -30秒 → -50秒 に増加",
+        "Plot Armor バリアのスピリットスケール: 1.3 → 1.5 に増加",
+        "Plot Armor T3 バリアのスピリットスケール: +0.3 → +0.5 に増加"
+      ]
+    },
+    {
+      "name": "Pocket",
+      "changes": [
+        "弾丸ダメージ成長: +0.2 → +0.16 に減少",
+        "Flying Cloak T3 クールダウン短縮: -13秒 → -12秒 に減少",
+        "Affliction がオブジェクトに対して半分のダメージになるように"
+      ]
+    },
+    {
+      "name": "Seven",
+      "changes": [
+        "弾丸ダメージ成長: 0.337 → 0.24 に減少",
+        "Power Surge T3 持続時間: +12秒 → +10秒 に減少",
+        "Storm Cloud が破壊可能オブジェクトにヒットするように"
+      ]
+    },
+    {
+      "name": "Shiv",
+      "changes": [
+        "Killing Blow がプレイヤーをキルできなかった場合、クールダウンが+30%増加するように"
+      ]
+    },
+    {
+      "name": "Silver",
+      "changes": [
+        "Lycan Curse クールダウン: 40秒 → 70秒 に増加",
+        "Lycan Curse T3 が回復効果を持たなくなった"
+      ]
+    },
+    {
+      "name": "Viscous",
+      "changes": [
+        "Puddle Punch T2 ライフスティール: +40% → +60% に増加",
+        "Goo Ball T2 が弾丸・スピリット耐性も+10%増加するように"
+      ]
+    },
+    {
+      "name": "Victor",
+      "changes": [
+        "Aura of Suffering 範囲: 9m → 8m に減少",
+        "Aura of Suffering T3 が範囲+1mも追加するように",
+        "Aura of Suffering 使用時のクライアント性能問題を一部修正",
+        "Shocking Reanimation クールダウン: 230秒 → 240秒 に増加",
+        "Shocking Reanimation T3 クールダウン短縮: -120秒 → -110秒 に減少",
+        "Shocking Reanimation T3 ダメージ: +150 → +175 に増加"
+      ]
+    },
+    {
+      "name": "Vindicta",
+      "changes": [
+        "Assassinate 最大追加ダメージのスピリットスケール: 1.7 → 2.0 に増加"
+      ]
+    },
+    {
+      "name": "Warden",
+      "changes": [
+        "弾丸減衰距離: 20m→58m → 18m→47m に変更",
+        "Alchemical Flask スピリットスケール: 0.73 → 0.63 に減少",
+        "Alchemical Flask T2 ダメージ: +40 → +35 に減少",
+        "Alchemical Flask T2 武器ダメージ減少: -20% → -25% に増加",
+        "Willpower スピリットスケール: +0.5 → +0.8 に増加",
+        "Binding Word T3 クールダウン短縮: -18秒 → -14秒 に減少",
+        "Last Stand ライフスティール: 65% → 75% に増加",
+        "Last Stand T2 クールダウン短縮: -30秒 → -35秒 に増加",
+        "Last Stand T3 持続時間: +3秒 → +4秒 に増加"
+      ]
+    }
+  ]
+}

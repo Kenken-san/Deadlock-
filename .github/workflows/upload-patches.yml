@@ -16,13 +16,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Sync patch notes to S3
+      - name: Upload patch notes to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-northeast-1
         run: |
-          aws s3 sync data/patches/ s3://deadlock-patch-data/patches/ \
+          # s3:PutObject のみで動作するよう cp --recursive を使用（sync/--delete は ListBucket/DeleteObject が必要なため避ける）
+          aws s3 cp data/patches/ s3://deadlock-patch-data/patches/ \
+            --recursive \
             --content-type application/json \
-            --cache-control "public, max-age=300" \
-            --delete
+            --cache-control "public, max-age=300"

@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build static patch pages
+        run: node scripts/build-patches.js
+
       - name: Deploy to EC2 via rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:

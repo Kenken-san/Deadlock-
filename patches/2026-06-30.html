@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock 6月30日パッチ 日本語翻訳｜Deadlockers</title>
+  <meta name="description" content="Deadlock 6月30日パッチの変更点を日本語で掲載。Urn / Unstable Rift（オブジェクト刷新）・Abrams・Apollo・Billy・Celeste・Doormanなど全143件のバランス調整を翻訳。" />
+  <link rel="canonical" href="https://deadlock-jp.com/patches/2026-06-30.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://deadlock-jp.com/patches/2026-06-30.html" />
+  <meta property="og:title" content="Deadlock 6月30日パッチ 日本語翻訳｜Deadlockers" />
+  <meta property="og:description" content="Deadlock 6月30日パッチの変更点を日本語で掲載。Urn / Unstable Rift（オブジェクト刷新）・Abrams・Apollo・Billy・Celeste・Doormanなど全143件のバランス調整を翻訳。" />
+  <meta property="og:site_name" content="Deadlockers" />
+  <meta property="og:locale" content="ja_JP" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deadlock 6月30日パッチ 日本語翻訳","datePublished":"2026-06-30","inLanguage":"ja","author":{"@type":"Organization","name":"Deadlockers"},"publisher":{"@type":"Organization","name":"Deadlockers"},"mainEntityOfPage":"https://deadlock-jp.com/patches/2026-06-30.html","description":"Deadlock 6月30日パッチの変更点を日本語で掲載。Urn / Unstable Rift（オブジェクト刷新）・Abrams・Apollo・Billy・Celeste・Doormanなど全143件のバランス調整を翻訳。"}</script>
+  <style>
+    :root{--bg:#0b0d10;--panel:rgba(255,255,255,0.06);--text:#f5f7fa;--muted:#aab3c2;--accent:#ffb84d;--line:rgba(255,255,255,0.12);--shadow:0 20px 50px rgba(0,0,0,0.35);--radius:22px;--max:1180px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,rgba(255,184,77,0.12),transparent 28%),radial-gradient(circle at top right,rgba(110,168,254,0.10),transparent 20%),linear-gradient(180deg,#0b0d10 0%,#10141a 100%);color:var(--text);line-height:1.65;}
+    a{color:inherit;}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto;}
+    .site-nav{background:rgba(255,255,255,0.04);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,3rem);display:flex;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);flex-wrap:wrap;}
+    .site-nav a{color:var(--muted);text-decoration:none;padding:1rem 1.25rem;font-size:0.9rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hero{padding:64px 0 24px;}
+    .eyebrow{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,0.04);font-size:0.88rem;margin-bottom:18px;}
+    h1{margin:0 0 14px;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-0.03em;}
+    .lead{margin:0 0 8px;color:var(--muted);font-size:1.05rem;max-width:62ch;}
+    .breadcrumb{color:var(--muted);font-size:0.85rem;margin-bottom:10px;}
+    .breadcrumb a{color:var(--muted);}
+    .section{padding:18px 0 40px;}
+    .section-title h2{margin:0 0 18px;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-0.02em;}
+    .patch-list{display:flex;flex-direction:column;gap:14px;}
+    .patch-entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);}
+    .patch-entry h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent);}
+    .patch-entry ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+    .patch-entry li{color:var(--muted);font-size:0.96rem;}
+    .patch-entry li::before{content:"▸ ";color:var(--accent);}
+    .archive-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .archive-links a{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:6px 16px;font-size:0.9rem;text-decoration:none;transition:border-color .2s,color .2s;}
+    .archive-links a:hover,.archive-links a.current{border-color:var(--accent);color:var(--accent);}
+    .patch-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .patch-nav a{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--text);padding:12px 18px;text-decoration:none;font-size:0.92rem;transition:border-color .2s;}
+    .patch-nav a:hover{border-color:var(--accent);}
+    footer{padding:20px 0 42px;color:var(--muted);font-size:0.92rem;}
+    .footer-box{border-top:1px solid var(--line);padding-top:18px;}
+    @media (max-width:900px){.section-title{display:block;}}
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">ホーム</a>
+    <a href="../heroes.html">ヒーロー統計</a>
+    <a href="../tier-list.html">Tier List</a>
+    <a href="../patch-notes.html">パッチノート翻訳</a>
+    <a href="../counter-items.html">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">ホーム</a> › <a href="../patch-notes.html">パッチノート翻訳</a> › 6月30日パッチ</div>
+      <h1>Deadlock 6月30日パッチ<br>日本語翻訳</h1>
+      <p class="lead">Deadlockの6月30日パッチにおける全変更点を日本語に翻訳して掲載しています。翻訳元: Valve公式パッチノート</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="patch-list">
+        <div class="patch-entry">
+          <h3>Urn / Unstable Rift（オブジェクト刷新）</h3>
+          <ul>
+            <li>キングオブザヒル（King of the Hill） オブジェクトのテーマ変更・名称変更: 「アンステーブルリフト（Unstable Rift）」に</li>
+            <li>アンステーブルリフト（Unstable Rift） の開始にアーン（Urn）配達が不要に。開始時刻が±1分で変動。出現25秒前にグローバルアナウンス、その60秒前にどのレーンに出現するかを示すワールド内エフェクトを表示</li>
+            <li>アンステーブルリフト（Unstable Rift） 出現間隔: 6分毎 → 7分毎 に増加</li>
+            <li>アンステーブルリフト（Unstable Rift） のカムバックボーナス（エリア内耐性・追加カムバックバウンティ・確保タイマー）が、ネットワースのビハインド量に応じて線形にスケール（0%で無し、15%ビハインドで最大）</li>
+            <li>アンステーブルリフト（Unstable Rift） を確保したチームにリフト（Rift）位置から5体のリフトトルーパー（Rift Troopers）が送られる。劣勢時は最大12体（0%〜-15%NWの線形）</li>
+            <li>リフトトルーパー（Rift Troopers） はキルしてもソウルを落とさない</li>
+            <li>リフトトルーパー（Rift Troopers） は体力・ダメージ+100%で出現（見た目も大きく専用VFX）。イベント毎にボーナスが上昇（100%→120%→140%…）</li>
+            <li>アンステーブルリフト（Unstable Rift） ゾーン内のプレイヤーがミニマップに表示されるように</li>
+            <li>アンステーブルリフト（Unstable Rift） バウンティを35%増加（アーンランナー（Urn Runner）バウンティ廃止分を補填、オブジェクト全体のバウンティは据え置き）</li>
+            <li>アンステーブルリフト（Unstable Rift） が各プレイヤーへの+1永続バフを付与しなくなった（アーンランナー（Urn Runner）への+3バフも廃止）</li>
+            <li>アーン（Urn）運びが独立したオブジェクトに。マップ両端（以前のニュートラル取得地点）に出現し、反対側へ配達。出現は10/15/20/25分…</li>
+            <li>アーンランナー（Urn Runner） はもう可視化されず、武装解除・サイレンスもされない（ドアやMirageテレポートを通ると落とす）</li>
+            <li>アーン（Urn） は手動で落とせない。ライト/ヘビー近接・スタン・キルで落ちる。落ちた場所に留まり、自動で戻らない</li>
+            <li>アーンランナー（Urn Runner） はパリィ不可に</li>
+            <li>アーン（Urn） バウンティ値は取得45秒後から減衰開始。さらに45秒かけて減り、空になるとアーン（Urn）が消滅</li>
+            <li>アーン（Urn） は配達地点で即座に納品される</li>
+            <li>納品時のアーン（Urn）バウンティはアーンランナー（Urn Runner）分で250+70/分。カムバックバウンティ要素も維持。納品時に全ソウルがオーブとして空中に放出（味方が確保すればアーンランナー（Urn Runner）と分配）</li>
+            <li>アーンランナー（Urn Runner） は納品時に+4永続バフを獲得</li>
+            <li>アーン（Urn） の発話がより大きくなり、近くの敵に聞き取りやすく</li>
+            <li>出現から3分後、アーン（Urn）は自動で納品地点へ非常にゆっくり歩き始める</li>
+            <li>アーン（Urn）保持中のパッシブボーナスがビハインド量に応じてスケールするように（アンステーブルリフト（Unstable Rift）と同じ0%〜15%NW線形）。ボーナス内容は以前と同じ</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>全般</h3>
+          <ul>
+            <li>ブーン（Boon）報酬テーブルを再構成</li>
+            <li>boon毎の体力を5%減少</li>
+            <li>全アルティメットの基礎・アップグレードクールダウンを15%増加（5の倍数に丸め）</li>
+            <li>リジュヴ（Rejuv） バフ持続時間: 4分 → 3分 に減少</li>
+            <li>リスポーンランプ: 5〜19分で8〜30秒 → 5〜20分で8〜35秒 に変更</li>
+            <li>ガーディアン（Guardian） バウンティ: 1500 → 1250 に減少</li>
+            <li>ウォーカー（Walker） バウンティ: 4000 → 3500 に減少</li>
+            <li>ファーストブラッドバウンティ: 150 → 125 に減少</li>
+            <li>基礎キルバウンティ: 250 → 200 に減少（40分時の最大は2200のまま）</li>
+            <li>トルーパーバウンティ再調整: 116+1.16/分 → 100+2/分（20分前は少なく、後は多く）</li>
+            <li>拒否可能な飛行オーブのトルーパーバウンティ比率: 40% → 50% に増加</li>
+            <li>落下する未確保ソウルの最小量: 150 → 50+5/分 に減少</li>
+            <li>ダッシュジャンプ（Dash Jump） 入力猶予: 0.2秒 → 0.25秒 に増加（開始0.3秒〜終了0.55秒）</li>
+            <li>ダッシュジャンプ（Dash Jump） 距離: 18m → 19m に増加</li>
+            <li>ダッシュジャンプ（Dash Jump） 垂直インパルス: 400 → 425 に増加</li>
+            <li>double sinner建物上のジャンプパッドを削除</li>
+            <li>ショップでアイテムをホバーすると投資バーのプレビューが表示されるように</li>
+            <li>ストリートブロウル（Street Brawl）: 開始数秒間ジップラインから降りられなくなる問題を解消</li>
+            <li>ストリートブロウル（Street Brawl）: アイテムのランダム性をやや増加</li>
+            <li>ストリートブロウル（Street Brawl）: エンハンスドシャープシューター（Enhanced Sharpshooter）とエンハンスドスピリチュアルオーバーフロー（Enhanced Spiritual Overflow）が強化コンポーネントのボーナスを維持しないバグを修正</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>アイテム</h3>
+          <ul>
+            <li>ミスティックショット（Mystic Shot） クールダウン: 8秒 → 9秒 に増加</li>
+            <li>トキシックブレット（Toxic Bullets） 出血ダメージ: 1.7% → 1.9% に増加</li>
+            <li>スカージ（Scourge） 最大体力DPS: 3.5% → 2.6% に減少</li>
+            <li>スカージ（Scourge） 最大体力DPSがスピリットパワーでスケールするように（0.0055）</li>
+            <li>カースドレリック（Cursed Relic） ダメージペナルティ: -10% → -14% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Abrams</h3>
+          <ul>
+            <li>サイフォンライフ（Siphon Life） T3: +3m範囲 → +2m に減少</li>
+            <li>ショルダーチャージ（Shoulder Charge） T3: -20秒クールダウン → -18秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Apollo</h3>
+          <ul>
+            <li>リポスト（Riposte） T1: -7秒クールダウン → -8秒 に増加</li>
+            <li>リポスト（Riposte） のチャネル後の対象猶予: +1秒 → +1.3秒 に増加</li>
+            <li>リポスト（Riposte） 詠唱範囲: 25m → 35m に増加</li>
+            <li>リポスト（Riposte） ターゲット角度: 70 → 90 に増加</li>
+            <li>フローレスアドバンス（Flawless Advance） のヒーローヒット時回復スピリットスケール: 1 → 1.3 に増加</li>
+            <li>イタニ・ロ・サーン（Itani Lo Sahn） T3 ボーナスダメージ: +40% → +50% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Billy</h3>
+          <ul>
+            <li>boon毎の弾丸ダメージを10%減少</li>
+            <li>バッシュダウン（Bashdown） 近接スケール: 1.1 → 0.9 に減少</li>
+            <li>バッシュダウン（Bashdown） T3: ヘビー近接ダメージ60% → 50% に減少</li>
+            <li>ライジングラム（Rising Ram） T3 最大体力ダメージ: 10% → 8% に減少</li>
+            <li>ライジングラム（Rising Ram） T3 最大体力ダメージスピリットスケール: 0.017 → 0.035 に増加（スピリット111で損益分岐）</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Celeste</h3>
+          <ul>
+            <li>ダズリングトリック（Dazzling Trick） クールダウン: 35秒 → 32秒 に減少</li>
+            <li>レディアントダガー（Radiant Daggers） バフ持続時間: 25秒 → 30秒 に増加</li>
+            <li>レディアントダガー（Radiant Daggers） スピリットスケール: 0.56 → 0.63 に増加</li>
+            <li>シャイニングワンダー（Shining Wonder） バウンス範囲: 15.5m → 16.5m に増加</li>
+            <li>シャイニングワンダー（Shining Wonder） ダメージを10%増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Doorman</h3>
+          <ul>
+            <li>ドアウェイ（Doorway） クールダウン: 40秒 → 45秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Drifter</h3>
+          <ul>
+            <li>boon毎の体力: 41 → 43 に増加（全体のhp boon減少はこの後に適用）</li>
+            <li>レンド（Rend） 詠唱時間: 0.5秒 → 0.4秒 に減少</li>
+            <li>レンド（Rend） 詠唱後硬直: 0.5秒 → 0.4秒 に減少</li>
+            <li>レンド（Rend） T2: -7秒クールダウン → -8秒 に増加</li>
+            <li>ブラッドセント（Bloodscent） T1: 孤立した敵の近くで+2m/s → +3m/s に増加</li>
+            <li>ブラッドセント（Bloodscent） T2 不足体力回復: 18% → +24% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Dynamo</h3>
+          <ul>
+            <li>リジュヴネイティングオーロラ（Rejuvenating Aurora） 回復: 25/秒 → 30/秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Grey Talon</h3>
+          <ul>
+            <li>レインオブアローズ（Rain of Arrows） クールダウン: 23秒 → 25秒 に増加</li>
+            <li>ガイデッドオウル（Guided Owl） 永続スピリットボーナス: 10 → 8 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Holliday</h3>
+          <ul>
+            <li>パウダーケグ（Powder Keg） の速度をわずかに減少</li>
+            <li>パウダーケグ（Powder Keg） チャージ遅延: 7秒 → 7.5秒 に増加</li>
+            <li>パウダーケグ（Powder Keg） スピリットスケール: 1.4 → 1.2 に減少</li>
+            <li>パウダーケグ（Powder Keg） T3: +100ダメージ → +80 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Haze</h3>
+          <ul>
+            <li>スリープダガー（Sleep Dagger） T1 弾丸耐性減少: -8% → -10% に増加</li>
+            <li>スリープダガー（Sleep Dagger） T2 クールダウン: -17秒 → -18秒 に増加</li>
+            <li>スモークボム（Smoke Bomb） T3 弾丸ライフスティール: +40% → +50% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Ivy</h3>
+          <ul>
+            <li>エンタングリングソーン（Entangling Thorns） スピリットスケール: 0.45 → 0.55 に増加</li>
+            <li>クズコネクション（Kudzu Connection） 複製回復のboonスケール: +0.5 → +0.85 に増加</li>
+            <li>エアドロップ（Air Drop） の味方使用時クールダウン短縮: -25% → -30% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Lash</h3>
+          <ul>
+            <li>グラウンドストライク（Ground Strike） クールダウン: 21秒 → 18秒 に減少</li>
+            <li>フロッグ（Flog） 角度: 30 → 38 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mina</h3>
+          <ul>
+            <li>レイク（Rake） 不足体力ダメージ: 5% → 6% に増加</li>
+            <li>サングインリトリート（Sanguine Retreat） T3: 射程も+3m増加するように</li>
+            <li>ノックスノストラ（Nox Nostra） ダメージ: 4.45 → 4.6 に増加</li>
+            <li>ノックスノストラ（Nox Nostra） T1 ダメージ: +1.74 → +1.9 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mo &amp; Krill</h3>
+          <ul>
+            <li>サンドブラスト（Sand Blast） T2 スロー: -25% → -30% に増加</li>
+            <li>サンドブラスト（Sand Blast） T3: -20秒クールダウン → -25秒 に増加</li>
+            <li>コンボ（Combo） のキル毎ボーナス最大体力: 30+1/boon → 40+2/boon に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paige</h3>
+          <ul>
+            <li>boon毎の体力: 29 → 33 に増加</li>
+            <li>ブックワーム（Bookwyrm） T1: 「+2秒トレイル時間・+1m範囲」→「-12秒クールダウン」に変更</li>
+            <li>ブックワーム（Bookwyrm） T2: 「+10m射程・-12秒クールダウン」→「+1チャージ・+1m範囲・+2秒トレイル時間」に変更</li>
+            <li>ブックワーム（Bookwyrm） T3: 「+100ダメージ・+30DPS・+1チャージ」→「+100ダメージ・+30DPS・+12m移動射程」に変更</li>
+            <li>プロットアーマー（Plot Armor） T1 射撃速度スピリットスケール: 0.13 → 0.16 に増加</li>
+            <li>プロットアーマー（Plot Armor） T3 バリア: 75% → 100% に増加</li>
+            <li>ラリーイングチャージ（Rallying Charge） が非ヒーローのみに当たった場合、正しく「ミス」（-50%CD短縮）として扱われるように修正</li>
+            <li>ラリーイングチャージ（Rallying Charge） T3 最大アンプ: +50% → +70% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paradox</h3>
+          <ul>
+            <li>キネティックカービン（Kinetic Carbine） T2: 移動速度のスピリットスケールも増加するように（0.06）</li>
+            <li>キネティックカービン（Kinetic Carbine） T3: 最大ダメージスケールのみ → 最小・最大両方のダメージスケールに影響するよう変更</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Pocket</h3>
+          <ul>
+            <li>boon毎の弾丸ダメージ: 0.16 → 0.14 に減少</li>
+            <li>フライングクローク（Flying Cloak） T3: -12秒クールダウン → -11秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Rem</h3>
+          <ul>
+            <li>タグアロング（Tag Along） 秒間回復スピリットスケール: 0.66 → 0.4 に減少</li>
+            <li>タグアロング（Tag Along） T3 不足体力スピリットスケール: +0.02 → +0.016 に減少</li>
+            <li>リルヘルパー（Lil Helpers） スピリット耐性: 15% → 12% に減少</li>
+            <li>リルヘルパー（Lil Helpers） T1: 「+1 ヘルパー（Helper）」→「+1 ヘルパー（Helper）・+1.5m/s移動速度」に変更</li>
+            <li>リルヘルパー（Lil Helpers） T2: 「+8%スピリット耐性・+1.5m/s移動速度」→「+1 ヘルパー（Helper）・+15%トルーパーダメージ&amp;耐性」に変更</li>
+            <li>リルヘルパー（Lil Helpers） T3: 「+2 ヘルパー（Helper）・+20%トルーパーダメージ&amp;耐性」→「+1 ヘルパー（Helper）・+15%スピリット耐性」に変更</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Seven</h3>
+          <ul>
+            <li>ライトニングボール（Lightning Ball） チャージ遅延: 7秒 → 6秒 に減少</li>
+            <li>ストームクラウド（Storm Cloud） 拡大時間: 1.5秒 → 3.5秒 に増加</li>
+            <li>ストームクラウド（Storm Cloud） ダメージ間隔: 0.25秒 → 0.3秒 に増加（DPSは据え置き）</li>
+            <li>ストームクラウド（Storm Cloud） T2: 初期範囲も+5m増加するように</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Shiv</h3>
+          <ul>
+            <li>オルト射撃ダメージにboon毎のカスタム値を追加（+0.2）</li>
+            <li>オルト射撃の弾薬消費/発: 3 → 5 に増加</li>
+            <li>オルト射撃のノックバック移動がスローhex状態で無効に</li>
+            <li>セレイテッドナイフ（Serrated Knives） クールダウン: 18秒 → 16秒 に減少</li>
+            <li>スライスアンドダイス（Slice and Dice） が60スピリットダメージの代わりに+25ライトメレーダメージ（計75）を与えるように</li>
+            <li>スライスアンドダイス（Slice and Dice）: -6%スピリット耐性 → +4%ダメージアンプ に変更</li>
+            <li>ブラッドレッティング（Bloodletting） T2: 「+15%被ダメージ繰延」→「+35%繰延ダメージクリア」に変更</li>
+            <li>ブラッドレッティング（Bloodletting） T3: 「+50%繰延ダメージクリア」→「+15%被ダメージ繰延」に変更</li>
+            <li>キリングブロウ（Killing Blow） が経路上のトルーパー・ニュートラルにもダメージを与えるように</li>
+            <li>キリングブロウ（Killing Blow） のヒーロー処刑時に即座にレージバーが満タンに</li>
+            <li>キリングブロウ（Killing Blow） のT3「ヒーローキル時20秒以内に再詠唱」が基礎アビリティに統合</li>
+            <li>キリングブロウ（Killing Blow） フルレージダメージボーナス: +12% → +8% に減少</li>
+            <li>キリングブロウ（Killing Blow） 射程: 18m → 12m に減少</li>
+            <li>キリングブロウ（Killing Blow） T1: 射程も+6m増加するように</li>
+            <li>キリングブロウ（Killing Blow） T2 フルレージボーナスダメージ: +10% → +16% に増加</li>
+            <li>キリングブロウ（Killing Blow） T3 敵体力閾値: +5% → +10% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Vindicta</h3>
+          <ul>
+            <li>ステーク（Stake） T2: -20秒クールダウン → -22秒 に増加</li>
+            <li>クロウファミリア（Crow Familiar） T2: -12秒クールダウン → -16秒 に増加</li>
+            <li>クロウファミリア（Crow Familiar） 各クロウ間の衝突半径をわずかに増加</li>
+            <li>アサシネイト（Assassinate） 最大ボーナスダメージスピリットスケール: 2 → 2.3 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Viscous</h3>
+          <ul>
+            <li>スプラッター（Splatter） T3 スピリットスケール: +1.1 → +1.0 に減少</li>
+            <li>パドルパンチ（Puddle Punch） T3: -12秒クールダウン → -14秒 に増加</li>
+            <li>グーボール（Goo Ball） T3: +6秒持続時間 → +7秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Vyper</h3>
+          <ul>
+            <li>スクリュージャブダガー（Screwjab Dagger） T3: チャージ遅延も4秒 → 2秒に短縮するように</li>
+            <li>スライザー（Slither） T3 スピリットスケール: 0.6 → 0.8 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Warden</h3>
+          <ul>
+            <li>boon毎の弾丸ダメージ: 0.34 → 0.28 に減少</li>
+            <li>ウィルパワー（Willpower） T2: -22秒クールダウン → -24秒 に増加</li>
+            <li>ウィルパワー（Willpower） T3 スピリットパワースケール: +2.5 → +2.7 に増加</li>
+          </ul>
+        </div>
+      </div>
+        <div class="patch-nav">
+          <a href="2026-07-01.html">← 7月1日パッチ</a>
+          <a href="../patch-notes.html">パッチノート一覧</a>
+          <a href="2026-06-11.html">6月11日パッチ →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+</body>
+</html>

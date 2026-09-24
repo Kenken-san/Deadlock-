@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock マッチメイキングアップデート（ランクモード実装） 日本語翻訳｜Deadlockers</title>
+  <meta name="description" content="Deadlock マッチメイキングアップデート（ランクモード実装）の変更点を日本語で掲載。スタンダードモード・ランクモード・ランク &amp; バッジ・参加資格とシーズン・ランクポイント・試合参加とヒーロー選択など全35件のバランス調整を翻訳。" />
+  <link rel="canonical" href="https://deadlock-jp.com/patches/2026-07-30.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://deadlock-jp.com/patches/2026-07-30.html" />
+  <meta property="og:title" content="Deadlock マッチメイキングアップデート（ランクモード実装） 日本語翻訳｜Deadlockers" />
+  <meta property="og:description" content="Deadlock マッチメイキングアップデート（ランクモード実装）の変更点を日本語で掲載。スタンダードモード・ランクモード・ランク &amp; バッジ・参加資格とシーズン・ランクポイント・試合参加とヒーロー選択など全35件のバランス調整を翻訳。" />
+  <meta property="og:site_name" content="Deadlockers" />
+  <meta property="og:locale" content="ja_JP" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deadlock マッチメイキングアップデート（ランクモード実装） 日本語翻訳","datePublished":"2026-07-30","inLanguage":"ja","author":{"@type":"Organization","name":"Deadlockers"},"publisher":{"@type":"Organization","name":"Deadlockers"},"mainEntityOfPage":"https://deadlock-jp.com/patches/2026-07-30.html","description":"Deadlock マッチメイキングアップデート（ランクモード実装）の変更点を日本語で掲載。スタンダードモード・ランクモード・ランク & バッジ・参加資格とシーズン・ランクポイント・試合参加とヒーロー選択など全35件のバランス調整を翻訳。"}</script>
+  <style>
+    :root{--bg:#0b0d10;--panel:rgba(255,255,255,0.06);--text:#f5f7fa;--muted:#aab3c2;--accent:#ffb84d;--line:rgba(255,255,255,0.12);--shadow:0 20px 50px rgba(0,0,0,0.35);--radius:22px;--max:1180px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,rgba(255,184,77,0.12),transparent 28%),radial-gradient(circle at top right,rgba(110,168,254,0.10),transparent 20%),linear-gradient(180deg,#0b0d10 0%,#10141a 100%);color:var(--text);line-height:1.65;}
+    a{color:inherit;}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto;}
+    .site-nav{background:rgba(255,255,255,0.04);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,3rem);display:flex;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);flex-wrap:wrap;}
+    .site-nav a{color:var(--muted);text-decoration:none;padding:1rem 1.25rem;font-size:0.9rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hero{padding:64px 0 24px;}
+    .eyebrow{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,0.04);font-size:0.88rem;margin-bottom:18px;}
+    h1{margin:0 0 14px;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-0.03em;}
+    .lead{margin:0 0 8px;color:var(--muted);font-size:1.05rem;max-width:62ch;}
+    .breadcrumb{color:var(--muted);font-size:0.85rem;margin-bottom:10px;}
+    .breadcrumb a{color:var(--muted);}
+    .section{padding:18px 0 40px;}
+    .section-title h2{margin:0 0 18px;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-0.02em;}
+    .patch-list{display:flex;flex-direction:column;gap:14px;}
+    .patch-entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);}
+    .patch-entry h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent);}
+    .patch-entry ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+    .patch-entry li{color:var(--muted);font-size:0.96rem;}
+    .patch-entry li::before{content:"▸ ";color:var(--accent);}
+    .archive-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .archive-links a{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:6px 16px;font-size:0.9rem;text-decoration:none;transition:border-color .2s,color .2s;}
+    .archive-links a:hover,.archive-links a.current{border-color:var(--accent);color:var(--accent);}
+    .patch-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .patch-nav a{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--text);padding:12px 18px;text-decoration:none;font-size:0.92rem;transition:border-color .2s;}
+    .patch-nav a:hover{border-color:var(--accent);}
+    footer{padding:20px 0 42px;color:var(--muted);font-size:0.92rem;}
+    .footer-box{border-top:1px solid var(--line);padding-top:18px;}
+    @media (max-width:900px){.section-title{display:block;}}
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">ホーム</a>
+    <a href="../heroes.html">ヒーロー統計</a>
+    <a href="../tier-list.html">Tier List</a>
+    <a href="../patch-notes.html">パッチノート翻訳</a>
+    <a href="../counter-items.html">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">ホーム</a> › <a href="../patch-notes.html">パッチノート翻訳</a> › マッチメイキングアップデート（ランクモード実装）</div>
+      <h1>Deadlock マッチメイキングアップデート（ランクモード実装）<br>日本語翻訳</h1>
+      <p class="lead">Deadlockのマッチメイキングアップデート（ランクモード実装）における全変更点を日本語に翻訳して掲載しています。翻訳元: Valve公式パッチノート</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="patch-list">
+        <div class="patch-entry">
+          <h3>概要</h3>
+          <ul>
+            <li>マッチメイキングシステムを刷新し、新しいモードを導入</li>
+            <li>スタンダードモード（アンランク）と、新しいランクモードを選んでプレイできるように</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>スタンダードモード</h3>
+          <ul>
+            <li>ランクを気にせず、より低ストレスでフレンドと遊べるモード</li>
+            <li>パーティ人数やスキル差の制限なし</li>
+            <li>苦手なヒーローの練習にも利用可能。マッチメイカーがそのヒーローの習熟度を考慮して試合を調整</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>ランクモード</h3>
+          <ul>
+            <li>同程度の実力のプレイヤーと、より高い緊張感の競技マッチにキューできる</li>
+            <li>シーズン毎にランクを上げてどこまで到達できるか挑戦可能</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>ランク &amp; バッジ</h3>
+          <ul>
+            <li>各ランクは6段階のサブランク（I〜VI）で構成</li>
+            <li>ランク一覧（下位→上位）: Obscurus（未計測）／ Initiate ／ Seeker ／ Acolyte ／ Sentinel ／ Mystic ／ Ritualist ／ Emissary ／ Oracle ／ Phantom ／ Ascendant ／ Eternus</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>参加資格とシーズン</h3>
+          <ul>
+            <li>ランクモードのキューにはスタンダードモードで60勝以上が必要</li>
+            <li>使用できるのはスタンダードモードで15勝以上しているヒーローのみ。有効なロスターを組むには最低3体のヒーローが必要</li>
+            <li>第1シーズンは本日開始、10月7日終了。シーズン終了時、到達最高ランクがランク履歴に永久記録される</li>
+            <li>シーズン開始時、全員が8試合のキャリブレーション期間に入る。以前のランクはソフトリセットされる。キャリブレーション中はパーティ不可、最高でOracle VIまでしか抜けられない</li>
+            <li>現状ソロまたはデュオのみ。デュオは互いに1ランク差以内（例: MysticとRitualist）。Eternus同士は3サブランク以内であればキュー可能</li>
+            <li>隠れ家に新しいランクハブを追加。現在・過去のシーズン情報、グローバルリーダーボード、ランク履歴を確認可能</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>ランクポイント</h3>
+          <ul>
+            <li>勝敗ごとにランクポイントが更新され、試合後に進捗バーで表示</li>
+            <li>1試合あたり平均±250ポイント（試合の期待値や連勝状況で変動）</li>
+            <li>サブランク昇格には1000ポイント必要。ただしランクを跨ぐ最終サブランク（例: Mystic VI→Ritualist I）は2000ポイント必要</li>
+            <li>Eternus I到達後は固定ポイント制ではなくなり、閾値が毎日動的に更新されパーセンタイルで区分される</li>
+            <li>ランク喪失保護あり: フルランク境界で5試合、サブランク境界で2試合の保護</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>試合参加とヒーロー選択</h3>
+          <ul>
+            <li>ヒーロー選択は試合形成前に行い、バックエンドで希望に沿ったチーム編成を作成</li>
+            <li>新しい試合前待機フェーズで、未選択かつランク解禁済みのヒーローに1回だけ変更可能</li>
+            <li>カウンターピック目的ではなく、チーム編成改善が主目的。敵の変更はリアルタイム表示されない（初期構成のみ表示）</li>
+            <li>待機フェーズで開始レーンも調整可能（以降ジップラインでのレーン変更不可）</li>
+            <li>ポーズは試合開始2分後まで無効</li>
+            <li>ランクモードでは1試合あたりのBAN数が2 → 3に増加、アルゴリズムも改善</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>放棄とペナルティ</h3>
+          <ul>
+            <li>アカウントに制裁（低優先度、コミュニケーションBAN等）がある場合はランクにキュー不可</li>
+            <li>5分前の放棄: 放棄者とそのパーティ以外は試合が無効化。放棄者側は敗北扱い＋離脱ペナルティ</li>
+            <li>5分後の放棄: 放棄者は離脱ペナルティ＋パーティは敗北扱い。同チームの他プレイヤーは無効化され離脱自由（残って勝てば勝利計上）</li>
+            <li>離脱ペナルティはキュータイムアウトから始まり、低優先度試合の増加へエスカレート</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>リーダーボード</h3>
+          <ul>
+            <li>グローバルリーダーボード: 直近30日の試合数要件が50 → 75に増加</li>
+            <li>ヒーロー別リーダーボード: 直近30日のそのヒーローでの試合数要件が20 → 30に増加</li>
+            <li>ヒーロー別で新たに「そのヒーローで通算100勝以上」が必要に</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>展開について</h3>
+          <ul>
+            <li>新システムは即日稼働。ただし解禁要件を満たすプレイヤーが少ないため、最初の1週間はキュー時間・マッチ品質が非常に不安定になる見込み</li>
+            <li>大規模な書き換えのため、バグ修正に数日かかる可能性あり</li>
+          </ul>
+        </div>
+      </div>
+        <div class="patch-nav">
+          <a href="2026-08-12.html">← 8月12日パッチ</a>
+          <a href="../patch-notes.html">パッチノート一覧</a>
+          <a href="2026-07-28.html">7月28日パッチ →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+</body>
+</html>

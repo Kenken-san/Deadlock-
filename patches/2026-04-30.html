@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock 4月30日パッチ 日本語翻訳｜Deadlockers</title>
+  <meta name="description" content="Deadlock 4月30日パッチの変更点を日本語で掲載。Abrams・Apollo・Billy・Celeste・Doorman・Drifterなど全54件のバランス調整を翻訳。" />
+  <link rel="canonical" href="https://deadlock-jp.com/patches/2026-04-30.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://deadlock-jp.com/patches/2026-04-30.html" />
+  <meta property="og:title" content="Deadlock 4月30日パッチ 日本語翻訳｜Deadlockers" />
+  <meta property="og:description" content="Deadlock 4月30日パッチの変更点を日本語で掲載。Abrams・Apollo・Billy・Celeste・Doorman・Drifterなど全54件のバランス調整を翻訳。" />
+  <meta property="og:site_name" content="Deadlockers" />
+  <meta property="og:locale" content="ja_JP" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deadlock 4月30日パッチ 日本語翻訳","datePublished":"2026-04-30","inLanguage":"ja","author":{"@type":"Organization","name":"Deadlockers"},"publisher":{"@type":"Organization","name":"Deadlockers"},"mainEntityOfPage":"https://deadlock-jp.com/patches/2026-04-30.html","description":"Deadlock 4月30日パッチの変更点を日本語で掲載。Abrams・Apollo・Billy・Celeste・Doorman・Drifterなど全54件のバランス調整を翻訳。"}</script>
+  <style>
+    :root{--bg:#0b0d10;--panel:rgba(255,255,255,0.06);--text:#f5f7fa;--muted:#aab3c2;--accent:#ffb84d;--line:rgba(255,255,255,0.12);--shadow:0 20px 50px rgba(0,0,0,0.35);--radius:22px;--max:1180px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,rgba(255,184,77,0.12),transparent 28%),radial-gradient(circle at top right,rgba(110,168,254,0.10),transparent 20%),linear-gradient(180deg,#0b0d10 0%,#10141a 100%);color:var(--text);line-height:1.65;}
+    a{color:inherit;}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto;}
+    .site-nav{background:rgba(255,255,255,0.04);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,3rem);display:flex;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);flex-wrap:wrap;}
+    .site-nav a{color:var(--muted);text-decoration:none;padding:1rem 1.25rem;font-size:0.9rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hero{padding:64px 0 24px;}
+    .eyebrow{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,0.04);font-size:0.88rem;margin-bottom:18px;}
+    h1{margin:0 0 14px;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-0.03em;}
+    .lead{margin:0 0 8px;color:var(--muted);font-size:1.05rem;max-width:62ch;}
+    .breadcrumb{color:var(--muted);font-size:0.85rem;margin-bottom:10px;}
+    .breadcrumb a{color:var(--muted);}
+    .section{padding:18px 0 40px;}
+    .section-title h2{margin:0 0 18px;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-0.02em;}
+    .patch-list{display:flex;flex-direction:column;gap:14px;}
+    .patch-entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);}
+    .patch-entry h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent);}
+    .patch-entry ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+    .patch-entry li{color:var(--muted);font-size:0.96rem;}
+    .patch-entry li::before{content:"▸ ";color:var(--accent);}
+    .archive-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .archive-links a{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:6px 16px;font-size:0.9rem;text-decoration:none;transition:border-color .2s,color .2s;}
+    .archive-links a:hover,.archive-links a.current{border-color:var(--accent);color:var(--accent);}
+    .patch-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .patch-nav a{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--text);padding:12px 18px;text-decoration:none;font-size:0.92rem;transition:border-color .2s;}
+    .patch-nav a:hover{border-color:var(--accent);}
+    footer{padding:20px 0 42px;color:var(--muted);font-size:0.92rem;}
+    .footer-box{border-top:1px solid var(--line);padding-top:18px;}
+    @media (max-width:900px){.section-title{display:block;}}
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">ホーム</a>
+    <a href="../heroes.html">ヒーロー統計</a>
+    <a href="../tier-list.html">Tier List</a>
+    <a href="../patch-notes.html">パッチノート翻訳</a>
+    <a href="../counter-items.html">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">ホーム</a> › <a href="../patch-notes.html">パッチノート翻訳</a> › 4月30日パッチ</div>
+      <h1>Deadlock 4月30日パッチ<br>日本語翻訳</h1>
+      <p class="lead">Deadlockの4月30日パッチにおける全変更点を日本語に翻訳して掲載しています。翻訳元: Valve公式パッチノート</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="patch-list">
+        <div class="patch-entry">
+          <h3>Abrams</h3>
+          <ul>
+            <li>Shoulder Charge をヒーローにヒットしてキャンセルした後の速度が高すぎる問題を修正</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Apollo</h3>
+          <ul>
+            <li>Sigil 解除時のベースダメージ: 100 → 85 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Billy</h3>
+          <ul>
+            <li>Rising Ram T3 がクールダウンを10秒短縮する効果も追加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Celeste</h3>
+          <ul>
+            <li>弾丸サイクルタイム: 0.65 → 0.58 に短縮</li>
+            <li>Shining Wonder 範囲: 14m → 15.5m に増加</li>
+            <li>Shining Wonder ダメージ: 120 → 135 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Doorman</h3>
+          <ul>
+            <li>ドアウェイを通してUrnを持ち込めるバグを修正</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Drifter</h3>
+          <ul>
+            <li>Rend T3 が近接スケール増加も追加（1.2 → 1.6）</li>
+            <li>Bloodscent T3 増幅ダメージ: +10% → +12% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Dynamo</h3>
+          <ul>
+            <li>Kinetic Pulse スピリットスケール: 1.8 → 1.65 に減少</li>
+            <li>Quantum Entanglement クールダウン: 19秒 → 20秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Haze</h3>
+          <ul>
+            <li>Bullet Dance 使用中のスライドを再び可能に</li>
+            <li>Bullet Dance 範囲: 15m → 16m に増加</li>
+            <li>Bullet Dance のベース能力に30%回避を追加</li>
+            <li>Bullet Dance T2: 「+10%射撃速度 / -45秒クールダウン」→「+10%射撃速度 / +3m移動速度」に変更</li>
+            <li>Bullet Dance T3: 「+60%回避 / +4m移動速度」→「+40%回避 / -75秒クールダウン」に変更</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Holliday</h3>
+          <ul>
+            <li>Rising Ram が Lasso を中断するバグを修正</li>
+            <li>Spirit Lasso T1 ダメージ: +68 → +80 に増加</li>
+            <li>Spirit Lasso T3 クールダウン短縮: -30秒 → -50秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Infernus</h3>
+          <ul>
+            <li>Flame Dash DPS スピリットスケール: 1.0 → 0.7 に減少</li>
+            <li>Flame Dash DPS がオブジェクトに対して半分のダメージになるように</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>McGinnis</h3>
+          <ul>
+            <li>Mini Turrets バウンティ: 80+2/分 → 40+4/分 に変更</li>
+            <li>Mini Turrets が無敵状態のオブジェクトにロックオンするバグを修正</li>
+            <li>Medicinal Specter 持続時間: 6秒 → 6.5秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mina</h3>
+          <ul>
+            <li>Nox Nostra DPS を6%減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mirage</h3>
+          <ul>
+            <li>ベース体力再生: 2 → 1.5 に減少</li>
+            <li>Fire Scarabs 持続時間: 8秒 → 7秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mo &amp; Krill</h3>
+          <ul>
+            <li>Burrow 移動速度ボーナス: +4 → +5 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paige</h3>
+          <ul>
+            <li>スタミナ: 2 → 3 に増加</li>
+            <li>ダッシュ速度をスローバケットに減少</li>
+            <li>Plot Armor クールダウン: 30秒 → 28秒 に減少</li>
+            <li>Bookwyrm リチャージタイマー: 8秒 → 7秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paradox</h3>
+          <ul>
+            <li>Kinetic Carbine クールダウン: 30秒 → 28秒 に減少</li>
+            <li>Time Wall T2 武器ダメージ: +30% → +35% に増加</li>
+            <li>Kinetic Carbine チャージ時にエアダッシュ距離+20%を付与するように</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Pocket</h3>
+          <ul>
+            <li>Enchanter's Satchel スピリットスケール: 0.9 → 1.1 に増加</li>
+            <li>Affliction クールダウン: 150秒 → 140秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Rem</h3>
+          <ul>
+            <li>Naptime 詠唱中に攻撃できるバグを修正</li>
+            <li>Pillow Toss リチャージタイマー: 10秒 → 9秒 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Shiv</h3>
+          <ul>
+            <li>サブ射撃のノックバックを10%減少</li>
+            <li>Serrated Knives スピリットスケール: 0.15 → 0.13 に減少</li>
+            <li>Serrated Knives T3 スピリットスケール: +0.1 → +0.09 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Silver</h3>
+          <ul>
+            <li>Tail Whack が武装解除の持続時間中に-12%弾丸耐性を適用するバグを修正</li>
+            <li>Slam Fire 現在体力ダメージ: 4% → 3% に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Venator</h3>
+          <ul>
+            <li>Gutshot ダメージスケール: 0.8 → 0.7 に減少</li>
+            <li>Gutshot 壁ヒットダメージスケール: 0.9 → 0.8 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Victor</h3>
+          <ul>
+            <li>Aura of Suffering T2: +28最大DPS → +34最大DPS に増加</li>
+            <li>Shocking Reanimation T3 クールダウン短縮: -100秒 → -130秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Viscous</h3>
+          <ul>
+            <li>Goo Ball の再適用までのロックアウト時間: 1.35 → 1.2 に減少（CC連続適用時のデバフ耐性バグ修正に伴う調整）</li>
+            <li>Splatter が正しくバウンスしない複数の場所を修正</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Vyper</h3>
+          <ul>
+            <li>Lethal Venom クールダウン: 24秒 → 28秒 に増加</li>
+            <li>Lethal Venom T2 クールダウン短縮: -8秒 → -12秒 に増加</li>
+            <li>Lethal Venom 射程: 15m → 10m に減少、ボーン依存スケール追加（0.2）</li>
+            <li>Armor Piercing Rounds が Petrify 中にダメージを与えるバグを修正</li>
+          </ul>
+        </div>
+      </div>
+        <div class="patch-nav">
+          <a href="2026-05-22.html">← 5月22日パッチ</a>
+          <a href="../patch-notes.html">パッチノート一覧</a>
+          <a href="2026-04-10.html">4月10日パッチ →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+</body>
+</html>

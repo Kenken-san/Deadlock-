@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock 8月22日パッチ 日本語翻訳｜Deadlockers</title>
+  <meta name="description" content="Deadlock 8月22日パッチの変更点を日本語で掲載。Celesteなど全12件のバランス調整を翻訳。" />
+  <link rel="canonical" href="https://deadlock-jp.com/patches/2026-08-22.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://deadlock-jp.com/patches/2026-08-22.html" />
+  <meta property="og:title" content="Deadlock 8月22日パッチ 日本語翻訳｜Deadlockers" />
+  <meta property="og:description" content="Deadlock 8月22日パッチの変更点を日本語で掲載。Celesteなど全12件のバランス調整を翻訳。" />
+  <meta property="og:site_name" content="Deadlockers" />
+  <meta property="og:locale" content="ja_JP" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deadlock 8月22日パッチ 日本語翻訳","datePublished":"2026-08-22","inLanguage":"ja","author":{"@type":"Organization","name":"Deadlockers"},"publisher":{"@type":"Organization","name":"Deadlockers"},"mainEntityOfPage":"https://deadlock-jp.com/patches/2026-08-22.html","description":"Deadlock 8月22日パッチの変更点を日本語で掲載。Celesteなど全12件のバランス調整を翻訳。"}</script>
+  <style>
+    :root{--bg:#0b0d10;--panel:rgba(255,255,255,0.06);--text:#f5f7fa;--muted:#aab3c2;--accent:#ffb84d;--line:rgba(255,255,255,0.12);--shadow:0 20px 50px rgba(0,0,0,0.35);--radius:22px;--max:1180px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,rgba(255,184,77,0.12),transparent 28%),radial-gradient(circle at top right,rgba(110,168,254,0.10),transparent 20%),linear-gradient(180deg,#0b0d10 0%,#10141a 100%);color:var(--text);line-height:1.65;}
+    a{color:inherit;}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto;}
+    .site-nav{background:rgba(255,255,255,0.04);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,3rem);display:flex;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);flex-wrap:wrap;}
+    .site-nav a{color:var(--muted);text-decoration:none;padding:1rem 1.25rem;font-size:0.9rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hero{padding:64px 0 24px;}
+    .eyebrow{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,0.04);font-size:0.88rem;margin-bottom:18px;}
+    h1{margin:0 0 14px;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-0.03em;}
+    .lead{margin:0 0 8px;color:var(--muted);font-size:1.05rem;max-width:62ch;}
+    .breadcrumb{color:var(--muted);font-size:0.85rem;margin-bottom:10px;}
+    .breadcrumb a{color:var(--muted);}
+    .section{padding:18px 0 40px;}
+    .section-title h2{margin:0 0 18px;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-0.02em;}
+    .patch-list{display:flex;flex-direction:column;gap:14px;}
+    .patch-entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);}
+    .patch-entry h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent);}
+    .patch-entry ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+    .patch-entry li{color:var(--muted);font-size:0.96rem;}
+    .patch-entry li::before{content:"▸ ";color:var(--accent);}
+    .archive-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .archive-links a{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:6px 16px;font-size:0.9rem;text-decoration:none;transition:border-color .2s,color .2s;}
+    .archive-links a:hover,.archive-links a.current{border-color:var(--accent);color:var(--accent);}
+    .patch-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .patch-nav a{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--text);padding:12px 18px;text-decoration:none;font-size:0.92rem;transition:border-color .2s;}
+    .patch-nav a:hover{border-color:var(--accent);}
+    footer{padding:20px 0 42px;color:var(--muted);font-size:0.92rem;}
+    .footer-box{border-top:1px solid var(--line);padding-top:18px;}
+    @media (max-width:900px){.section-title{display:block;}}
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">ホーム</a>
+    <a href="../heroes.html">ヒーロー統計</a>
+    <a href="../tier-list.html">Tier List</a>
+    <a href="../patch-notes.html">パッチノート翻訳</a>
+    <a href="../counter-items.html">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">ホーム</a> › <a href="../patch-notes.html">パッチノート翻訳</a> › 8月22日パッチ</div>
+      <h1>Deadlock 8月22日パッチ<br>日本語翻訳</h1>
+      <p class="lead">Deadlockの8月22日パッチにおける全変更点を日本語に翻訳して掲載しています。翻訳元: Valve公式パッチノート</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="patch-list">
+        <div class="patch-entry">
+          <h3>アイテム</h3>
+          <ul>
+            <li>レディアントリジェネレーション（Radiant Regeneration） 詠唱時回復: 70 → 65 に減少</li>
+            <li>レストラティブロケット（Restorative Locket） スピリット耐性: 10% → 8% に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Celeste</h3>
+          <ul>
+            <li>ダズリングトリック（Dazzling Trick） クールダウン: 32秒 → 34秒 に増加</li>
+            <li>ダズリングトリック（Dazzling Trick） T2 バリア再調整: 「+80・スケール+0.7」→「+70・+0.76」に変更</li>
+            <li>ダズリングトリック（Dazzling Trick） T3 クールダウン: -18秒 → -20秒 に増加</li>
+            <li>ダズリングトリック（Dazzling Trick） T3 サイレンス: +1.5秒 → +1.25秒 に減少</li>
+            <li>レディアントダガー（Radiant Daggers） スタック毎スピリットアンプ: +8% → +7% に減少</li>
+            <li>レディアントダガー（Radiant Daggers） T3 スタック毎スピリットアンプ: +3% → +4% に増加</li>
+            <li>シャイニングワンダー（Shining Wonder） バウンス範囲: 17.5m → 16.5m に減少</li>
+            <li>シャイニングワンダー（Shining Wonder） ダメージ: 165 → 140 に減少</li>
+            <li>シャイニングワンダー（Shining Wonder） スピリットスケール: 0.9 → 0.6 に減少</li>
+            <li>シャイニングワンダー（Shining Wonder） T2: スピリットスケールも+0.45増加するように</li>
+          </ul>
+        </div>
+      </div>
+        <div class="patch-nav">
+          <a href="2026-09-16.html">← 9月16日パッチ</a>
+          <a href="../patch-notes.html">パッチノート一覧</a>
+          <a href="2026-08-12.html">8月12日パッチ →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+</body>
+</html>

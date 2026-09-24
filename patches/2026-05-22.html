@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock 5月22日パッチ 日本語翻訳｜Deadlockers</title>
+  <meta name="description" content="Deadlock 5月22日パッチの変更点を日本語で掲載。Abrams・Apollo・Bebop・Billy・Calico・Celesteなど全143件のバランス調整を翻訳。" />
+  <link rel="canonical" href="https://deadlock-jp.com/patches/2026-05-22.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://deadlock-jp.com/patches/2026-05-22.html" />
+  <meta property="og:title" content="Deadlock 5月22日パッチ 日本語翻訳｜Deadlockers" />
+  <meta property="og:description" content="Deadlock 5月22日パッチの変更点を日本語で掲載。Abrams・Apollo・Bebop・Billy・Calico・Celesteなど全143件のバランス調整を翻訳。" />
+  <meta property="og:site_name" content="Deadlockers" />
+  <meta property="og:locale" content="ja_JP" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deadlock 5月22日パッチ 日本語翻訳","datePublished":"2026-05-22","inLanguage":"ja","author":{"@type":"Organization","name":"Deadlockers"},"publisher":{"@type":"Organization","name":"Deadlockers"},"mainEntityOfPage":"https://deadlock-jp.com/patches/2026-05-22.html","description":"Deadlock 5月22日パッチの変更点を日本語で掲載。Abrams・Apollo・Bebop・Billy・Calico・Celesteなど全143件のバランス調整を翻訳。"}</script>
+  <style>
+    :root{--bg:#0b0d10;--panel:rgba(255,255,255,0.06);--text:#f5f7fa;--muted:#aab3c2;--accent:#ffb84d;--line:rgba(255,255,255,0.12);--shadow:0 20px 50px rgba(0,0,0,0.35);--radius:22px;--max:1180px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,rgba(255,184,77,0.12),transparent 28%),radial-gradient(circle at top right,rgba(110,168,254,0.10),transparent 20%),linear-gradient(180deg,#0b0d10 0%,#10141a 100%);color:var(--text);line-height:1.65;}
+    a{color:inherit;}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto;}
+    .site-nav{background:rgba(255,255,255,0.04);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,3rem);display:flex;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);flex-wrap:wrap;}
+    .site-nav a{color:var(--muted);text-decoration:none;padding:1rem 1.25rem;font-size:0.9rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hero{padding:64px 0 24px;}
+    .eyebrow{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,0.04);font-size:0.88rem;margin-bottom:18px;}
+    h1{margin:0 0 14px;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-0.03em;}
+    .lead{margin:0 0 8px;color:var(--muted);font-size:1.05rem;max-width:62ch;}
+    .breadcrumb{color:var(--muted);font-size:0.85rem;margin-bottom:10px;}
+    .breadcrumb a{color:var(--muted);}
+    .section{padding:18px 0 40px;}
+    .section-title h2{margin:0 0 18px;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-0.02em;}
+    .patch-list{display:flex;flex-direction:column;gap:14px;}
+    .patch-entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);}
+    .patch-entry h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent);}
+    .patch-entry ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+    .patch-entry li{color:var(--muted);font-size:0.96rem;}
+    .patch-entry li::before{content:"▸ ";color:var(--accent);}
+    .archive-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .archive-links a{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:6px 16px;font-size:0.9rem;text-decoration:none;transition:border-color .2s,color .2s;}
+    .archive-links a:hover,.archive-links a.current{border-color:var(--accent);color:var(--accent);}
+    .patch-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .patch-nav a{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--text);padding:12px 18px;text-decoration:none;font-size:0.92rem;transition:border-color .2s;}
+    .patch-nav a:hover{border-color:var(--accent);}
+    footer{padding:20px 0 42px;color:var(--muted);font-size:0.92rem;}
+    .footer-box{border-top:1px solid var(--line);padding-top:18px;}
+    @media (max-width:900px){.section-title{display:block;}}
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">ホーム</a>
+    <a href="../heroes.html">ヒーロー統計</a>
+    <a href="../tier-list.html">Tier List</a>
+    <a href="../patch-notes.html">パッチノート翻訳</a>
+    <a href="../counter-items.html">カウンター対策</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">ホーム</a> › <a href="../patch-notes.html">パッチノート翻訳</a> › 5月22日パッチ</div>
+      <h1>Deadlock 5月22日パッチ<br>日本語翻訳</h1>
+      <p class="lead">Deadlockの5月22日パッチにおける全変更点を日本語に翻訳して掲載しています。翻訳元: Valve公式パッチノート</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="patch-list">
+        <div class="patch-entry">
+          <h3>Abrams</h3>
+          <ul>
+            <li>Infernal Resilience T1: &quot;+1.5 Health Regen&quot; から &quot;+200 Max Health&quot; に変更</li>
+            <li>Infernal Resilience T2: &quot;200 Max Health&quot; から &quot;+18% Melee Lifesteal（非ヒーロー相手は40%効果）&quot; に変更</li>
+            <li>Seismic Impact T2 スタン時間: +0.7秒 → +0.8秒 に増加</li>
+            <li>Seismic Impact T3 Unstoppable 持続時間: 5秒 → 6秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Apollo</h3>
+          <ul>
+            <li>ヒットボックスを改善（ヒットしやすくなった）</li>
+            <li>ベース体力再生: 2 → 1 に減少</li>
+            <li>Riposte が自動ダッシュしなくなった。代わりにジャンプ先のヒーローをターゲットするサブアビリティを短時間付与（パリィ前に敵をターゲットしてバッファリング可能）。射程25m</li>
+            <li>Riposte がダメージオーラ（Flame Dashなど）で発動しなくなった</li>
+            <li>Riposte がオブジェクトへのダメージで発動しなくなった</li>
+            <li>Flawless Advance のヒットボックスを10%縮小</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Bebop</h3>
+          <ul>
+            <li>Boon毎の弾丸ダメージ: 0.139 → 0.115 に減少</li>
+            <li>Exploding Uppercut T2 武器ダメージ: +40% → +30% に減少</li>
+            <li>Sticky Bomb T2 ダメージ: +75 → +85 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Billy</h3>
+          <ul>
+            <li>Boon毎の体力: +48 → +59 に増加</li>
+            <li>Boon毎の弾丸ダメージ: 0.165 → 0.142 に減少</li>
+            <li>Rising Ram クールダウン: 30秒 → 32秒 に増加</li>
+            <li>Rising Ram T2 持続時間: +0.3秒 → +0.4秒 に増加</li>
+            <li>Rising Ram T3 クールダウン短縮: -10秒 → -13秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Calico</h3>
+          <ul>
+            <li>Gloom Bomb T2: &quot;+75 バリアへのダメージ&quot; から &quot;爆弾1つごとに-5% メレー耐性（5秒、スタック可能）&quot; に変更</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Celeste</h3>
+          <ul>
+            <li>ヒットボックスを改善（ヒットしやすくなった）</li>
+            <li>スタミナクールダウン: 4.5秒 → 5秒 に増加</li>
+            <li>Radiant Daggers T2: &quot;-18秒 クールダウン &amp; +70 ダメージ&quot; から &quot;-22秒 クールダウン &amp; +80 ダメージ&quot; に変更</li>
+            <li>Shining Wonder T2 ダメージ: +50 → +70 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Doorman</h3>
+          <ul>
+            <li>Call Bell 範囲: 6m → 5.5m に減少</li>
+            <li>Call Bell T3 範囲ボーナス: +4m → +4.5m に増加</li>
+            <li>Call Bell 爆発ダメージのスピリットスケール: 1.4 → 1.3 に減少</li>
+            <li>Call Bell の命中精度デバフが1秒で100%→0%に減衰しなくなった（残り4秒間維持）</li>
+            <li>Call Bell の命中精度デバフ: -100% → -40% に減少（全持続時間中一定）</li>
+            <li>ドアを閉じるサブアビリティが8秒のクールダウン開始状態でスタートするように</li>
+            <li>Doorway がサイレンス不可でなくなった</li>
+            <li>Luggage Cart がディスペルされないバグを修正</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Drifter</h3>
+          <ul>
+            <li>Rend T3 がスピリットスケールを0.4増加しなくなった</li>
+            <li>Rend T3 がヘビーメレーダメージ（スケール0.55）も与えるようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Dynamo</h3>
+          <ul>
+            <li>Kinetic Pulse T2 弾丸耐性減少: -18% → -15% に縮小</li>
+            <li>Kinetic Pulse スピリットスケール: 1.65 → 1.55 に減少</li>
+            <li>Quantum Entanglement T3: 非ウルトデバフを解除する効果から、非ウルトデバフ持続時間を50%短縮する効果に変更</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Graves</h3>
+          <ul>
+            <li>スプリント速度: 1.6 → 2.2 に増加</li>
+            <li>Grasping Hands がベースアビリティで幽霊を1体召喚するようになった（T3は+1体追加）</li>
+            <li>Deadheads の追跡時ダッシュ範囲をGravesの中心から計算するように更新</li>
+            <li>Deadheads の射撃速度バフが最初ではなく次の攻撃から適用されるバグを修正</li>
+            <li>Deadheads がベールを通してダッシュできないバグを修正</li>
+            <li>Deadheads が追跡モード時に攻撃範囲ギリギリのターゲットへダッシュできないバグを修正</li>
+            <li>Deadheads の弾丸ダメージが距離減衰の影響を受けないバグを修正</li>
+            <li>Deadheads が視線を失ってから追跡停止まで0.1秒のバッファを追加</li>
+            <li>Deadheads が追跡中にGravesが死亡すると無効化されるバグを修正</li>
+            <li>Jar of Dead スピリットスケール: 0.35 → 0.31 に減少（ダメージ増加に伴う調整）</li>
+            <li>Gravesを追跡するDeadheadsの速度・加速度を増加（戦闘中は影響なし）</li>
+            <li>特定のプロジェクタイル（Gray Talonの鳥など）がDeadheadsに当たるバグを修正</li>
+            <li>Gravesのメレーがdeadheadsのダッシュターゲットも設定するように更新</li>
+            <li>弾丸ダメージと成長率を10%減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Grey Talon</h3>
+          <ul>
+            <li>Rain of Arrows クールダウン: 30秒 → 22秒 に減少</li>
+            <li>Rain of Arrows 詠唱遅延: 0.5秒 → 0.2秒 に減少</li>
+            <li>Rain of Arrows 持続時間: 7秒 → 4秒 に減少</li>
+            <li>Rain of Arrows の空中での移動を改善</li>
+            <li>Rain of Arrows スタミナ距離補正: -9% → +25% に変更</li>
+            <li>Rain of Arrows 武器ダメージボーナス: +4 → +3 に減少</li>
+            <li>Rain of Arrows T1: &quot;-14秒 クールダウン&quot; から &quot;+3 武器ダメージ &amp; +30% スロー（1.5秒）&quot; に変更</li>
+            <li>Rain of Arrows T2: &quot;+5 武器ダメージ &amp; +40% スロー（1.5秒）&quot; から &quot;-13秒 クールダウン&quot; に変更（合計クールダウン16秒→9秒）</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Haze</h3>
+          <ul>
+            <li>Fixation T3: +0.12 → +0.14 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Holliday</h3>
+          <ul>
+            <li>ベース弾丸ダメージ: 18.8 → 19.7 に増加</li>
+            <li>体力再生: 1 → 2 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Infernus</h3>
+          <ul>
+            <li>弾丸サイズ: 3 → 4 に増加</li>
+            <li>Concussive Combustion T3 スタン時間: +0.75秒 → +0.9秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Kelvin</h3>
+          <ul>
+            <li>Frost Grenade ダメージスピリットスケール: 0.7 → 0.6 に減少</li>
+            <li>Ice Path 中断時に足元に氷の道を生成しなくなり、代わりにそのまま地面に落下するように変更</li>
+            <li>Arctic Beam DPS スピリットスケール: 0.5 → 0.38 に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Lash</h3>
+          <ul>
+            <li>Boon毎の弾丸ダメージ: 0.341 → 0.31 に減少</li>
+            <li>Ground Strike のメートルあたりダメージスピリットスケール: 0.0372 → 0.04 に増加</li>
+            <li>Grapple T2 のボーナスダメージがスタックしなくなり、持続時間をリフレッシュするように変更</li>
+            <li>Grapple T3 がチャージ+1を付与するようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>McGinnis</h3>
+          <ul>
+            <li>Boon毎の弾丸ダメージ: 0.17 → 0.18 に増加</li>
+            <li>Heavy Barrage が Diviner's Kevlar を発動しないバグを修正</li>
+            <li>Medicinal Specter 範囲: 5.5m → 6m に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mina</h3>
+          <ul>
+            <li>固有効果としてデバフ耐性-8%を追加</li>
+            <li>高ピン時にRakeが機能しないことがあるバグを修正</li>
+            <li>Love Bites T3 クールダウン短縮: -4秒 → -5秒 に増加</li>
+            <li>Love Bites のオンヒットフラットダメージがアビリティに適用されなくなった（Nox Nostraで20%加算されていた問題を修正）</li>
+            <li>Nox Nostra T3 現在HP割合ダメージ: 1% → 0.5% に減少</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mirage</h3>
+          <ul>
+            <li>Djinn's Mark のビジュアルを更新</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Mo &amp; Krill</h3>
+          <ul>
+            <li>掘削中にメレー攻撃を受けてもノックアップしなくなった</li>
+            <li>Sand Blast T3 持続時間: +1秒 → +1.5秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paige</h3>
+          <ul>
+            <li>Bookwyrm T2 クールダウン短縮: -8秒 → -12秒 に改善</li>
+            <li>Rallying Charge T3 ダメージ: +135 → +160 に増加</li>
+            <li>Rallying Charge が味方・敵どちらにもヒットしなかった場合のクールダウンが半分になった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Paradox</h3>
+          <ul>
+            <li>Time Wall T1 持続時間ボーナス: +2.5秒 → +3.5秒 に増加</li>
+            <li>Time Wall T3 チャージボーナス: +1 → +2 に増加</li>
+            <li>Time Wall T3 チャージ遅延: 4秒 → 2秒 に減少</li>
+            <li>Kinetic Carbine T3 最大ダメージスケールボーナス: +50% → +55% に増加</li>
+            <li>Paradoxical Swap ダメージ: 125 → 150 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Pocket</h3>
+          <ul>
+            <li>Flying Cloak T2 武器ダメージ持続時間: 8秒 → 6秒 に減少</li>
+            <li>Affliction クールダウン: 140秒 → 150秒 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Rem</h3>
+          <ul>
+            <li>Pillow Toss チャージ時間: 9秒 → 8秒 に減少</li>
+            <li>Pillow Toss T3 ダメージ: +90 → +100 に増加</li>
+            <li>Tag Along のバーストヒールが2次ジャンプ先の味方にも適用されるように</li>
+            <li>Tag Along の継続ヒール持続時間: 3秒 → 2秒 に減少（総ヒール量は同じでより速く回復）</li>
+            <li>Tag Along T2 バリアとアイテム効果量: 25% → 35% に増加</li>
+            <li>Tag Along T3 が不足体力ヒール（0.03→0.05）と毎秒再生（0.66→1.0）の増加も追加</li>
+            <li>Tag Along がベールを通して使用できるようになった</li>
+            <li>Tag Along から脱出後のロックアウト時間: 1秒 → 0.3秒 に減少</li>
+            <li>Tag Along で味方に飛んでいく時間が50%短縮</li>
+            <li>Tag Along のヒール持続時間がHUDと体力バーアイコンに表示されるように</li>
+            <li>Tag Along 使用中にRemが死亡する特定のアビリティ/アイテムを修正</li>
+            <li>Tag Along 使用中にフレンドリーオーラがRemにも適用されるように</li>
+            <li>Tag Along の脱出がデバフ耐性の影響を受けなくなり、地面に当たるのを防ぐため上方向にわずかに飛ぶように</li>
+            <li>Tag Along の脱出後に移動制限と入力制限が短時間かかるバグを修正</li>
+            <li>Naptime がベースアビリティで+30%ダメージ軽減を付与するように（T3は+50%追加）</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Seven</h3>
+          <ul>
+            <li>弾丸ダメージ成長率: 0.374 → 0.337 に減少</li>
+            <li>クリティカル軽減: 35% → 55% に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Shiv</h3>
+          <ul>
+            <li>Slice and Dice T2 スピリット耐性デバフ: -8% → -6% に縮小</li>
+            <li>Bloodletting 遅延ダメージクリア量: 40% → 35% に減少</li>
+            <li>Bloodletting T3 遅延ダメージクリアボーナス: +45% → +50% に増加</li>
+            <li>Killing Blow クールダウン: 105秒 → 125秒 に増加</li>
+            <li>Killing Blow フルレイジ時ダメージボーナス: 14% → 12% に減少</li>
+            <li>Killing Blow T2 フルレイジダメージボーナス: +8% → +10% に増加</li>
+            <li>Killing Blow T2 がクールダウン-30秒も付与するようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Silver</h3>
+          <ul>
+            <li>弾丸サイクルタイム: 0.9秒 → 0.85秒 に短縮（全体DPSは同値に調整）</li>
+            <li>Entangling Bola 使用中にジャンプとマントルができなくなるバグを修正</li>
+            <li>Entangling Bola T2: &quot;+0.75秒 持続時間&quot; から &quot;-5秒 クールダウン&quot; に変更</li>
+            <li>Entangling Bola T3: &quot;-5秒 クールダウン &amp; 2体の追加ターゲットへリコシェット&quot; から &quot;+0.75秒 持続時間 &amp; 2体の追加ターゲットへリコシェット&quot; に変更</li>
+            <li>Lycan Curse 射撃速度: 80% → 65% に減少</li>
+            <li>Lycan Curse 射撃速度スピリットスケール: 0.25 → 0.45 に増加</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Venator</h3>
+          <ul>
+            <li>体力: 790+43/boon → 830+48/boon に増加</li>
+            <li>Hex-Lined Snap Trap T3 露出ターゲットへのダメージ: +25% → +30% に増加</li>
+            <li>Hex-Lined Snap Trap T3 がチャージ+1を付与するようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Victor</h3>
+          <ul>
+            <li>弾丸ダメージ: 13+0.3135 → 12+0.26 に減少</li>
+            <li>Jumpstart T3 スピリットスケール: +0.6 → +0.9 に増加</li>
+            <li>Aura of Suffering がオブジェクトに対して50%のダメージを与えるようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Viscous</h3>
+          <ul>
+            <li>Puddle Punch T1 がダメージ+20も追加するようになった</li>
+            <li>Puddle Punch T2 がダメージ+30を増加しなくなった</li>
+            <li>Puddle Punch T2 がライフスティール+40%（非ヒーロー相手は1/4）を付与するようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Vyper</h3>
+          <ul>
+            <li>Screwjab Dagger T2 スタックごとの弾丸耐性デバフ: -5% → -6% に増加</li>
+            <li>Screwjab Dagger T3 が最大スタック+2を付与するようになった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Warden</h3>
+          <ul>
+            <li>Boon毎の弾丸ダメージ: 0.38 → 0.34 に減少</li>
+            <li>Willpower T3 のデバフ耐性が使用時に既存のデバフに遡及して適用されるように</li>
+            <li>Binding Word T2 がキャスト範囲+12mを付与しなくなった</li>
+          </ul>
+        </div>
+        <div class="patch-entry">
+          <h3>Yamato</h3>
+          <ul>
+            <li>Power Slash のポストキャスト時間: 0.4秒 → 0.2秒 に減少</li>
+            <li>Power Slash スピリットスケール: 1.86 → 2.1 に増加</li>
+            <li>Flying Slash 射程: 25m → 30m に増加</li>
+            <li>Flying Slash T2 がキャスト範囲+20mを付与しなくなった</li>
+            <li>Flying Slash T3 がキャスト範囲+15mを付与するようになった</li>
+            <li>Flying Slash T3 チャージ: +1 → +2 に増加</li>
+            <li>Crimson Slash がカメラを上下に向けすぎると当たらないバグを修正</li>
+            <li>Shadow Transformation T1 武器ダメージ: +5 → +7 に増加</li>
+          </ul>
+        </div>
+      </div>
+        <div class="patch-nav">
+          <a href="2026-06-11.html">← 6月11日パッチ</a>
+          <a href="../patch-notes.html">パッチノート一覧</a>
+          <a href="2026-04-30.html">4月30日パッチ →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      非公式ファンサイト。DeadlockはValve Corporationの商標です。
+    </div>
+  </footer>
+</body>
+</html>
